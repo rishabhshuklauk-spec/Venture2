@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scripts/enemy_1.gd" id="3_5lcx6"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_pklw6"]
 [ext_resource type="Texture2D" path="res://assets/images/baddies/CLAUDE.png" id="3_qrujo"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/CLAUDE_MINI.png" id="4_cmini"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_gmhuy")
@@ -545,63 +546,8 @@ scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAAAAAAAASAAUAAAAAAA4AAAAMAAEAAAABAAAAAAASAAUAAAABAA4AAAAMAAEAAAACAAAAAAASAAUAAAACAA4AAAAMAAEAAAADAAAAAAASAAUAAAADAA4AAAAMAAEAAAAEAAAAAAASAAUAAAAEAA4AAAAMAAEAAAAFAAAAAAASAAUAAAAFAA4AAAAMAAEAAAAGAAAAAAASAAUAAAAGAA4AAAAMAAEAAAAHAAAAAAASAAUAAAAHAA4AAAAMAAEAAAAIAAAAAAASAAUAAAAIAA4AAAAMAAEAAAAJAAAAAAASAAUAAAAJAA4AAAAMAAEAAAAKAAAAAAASAAUAAAAKAA4AAAAMAAEAAAALAAAAAAASAAUAAAALAA4AAAAMAAEAAAAMAAAAAAASAAUAAAAMAA4AAAAMAAEAAAANAAAAAAASAAUAAAANAA4AAAAMAAEAAAAOAAAAAAASAAUAAAAOAA4AAAAMAAEAAAAPAAAAAAASAAUAAAAPAA4AAAAMAAEAAAAQAAAAAAASAAUAAAAQAA4AAAAMAAEAAAARAAAAAAASAAUAAAARAA4AAAAMAAEAAAASAAAAAAASAAUAAAASAA4AAAAMAAEAAAATAAAAAAASAAUAAAATAA4AAAAMAAEAAAAUAAAAAAASAAUAAAAUAA4AAAAMAAEAAAAVAAAAAAASAAUAAAAVAA4AAAAMAAEAAAAWAAAAAAASAAUAAAAWAA4AAAAMAAEAAAAXAAAAAAASAAUAAAAXAA4AAAAMAAEAAAAYAAAAAAASAAUAAAAYAA4AAAAMAAEAAAAZAAAAAAASAAUAAAAZAA4AAAAMAAEAAAAAAAEAAAASAAUAAAAZAAEAAAASAAUAAAAAAAIAAAASAAUAAAAZAAIAAAASAAUAAAAAAAMAAAASAAUAAAAZAAMAAAASAAUAAAAAAAQAAAASAAUAAAAZAAQAAAASAAUAAAAAAAUAAAASAAUAAAAZAAUAAAASAAUAAAAAAAYAAAASAAUAAAAZAAYAAAASAAUAAAAAAAcAAAASAAUAAAAZAAcAAAASAAUAAAAAAAgAAAASAAUAAAAZAAgAAAASAAUAAAAAAAkAAAASAAUAAAAZAAkAAAASAAUAAAAAAAoAAAASAAUAAAAZAAoAAAASAAUAAAAAAAsAAAASAAUAAAAZAAsAAAASAAUAAAAAAAwAAAASAAUAAAAZAAwAAAASAAUAAAAAAA0AAAASAAUAAAAZAA0AAAASAAUAAAAPAAcAAAAMAAEAAAAQAAcAAAAMAAEAAAARAAcAAAAMAAEAAAASAAcAAAAMAAEAAAATAAcAAAAMAAEAAAAUAAcAAAAMAAEAAAAVAAcAAAAMAAEAAAAWAAcAAAAMAAEAAAAXAAcAAAAMAAEAAAAYAAcAAAAMAAEAAAAPAAQAAAAMAAkAAAAPAAUAAAAMAAkAAAAPAAYAAAAMAAkAAAAEAAgAAAAMAAEAAAAFAAgAAAAMAAEAAAAGAAgAAAAMAAEAAAAHAAgAAAAMAAEAAAAJAAsAAAAMAAEAAAAKAAsAAAAMAAEAAAALAAsAAAAMAAEAAAAMAAsAAAAMAAEAAAARAAsAAAAMAAEAAAASAAsAAAAMAAEAAAATAAsAAAAMAAEAAAAUAAsAAAAMAAEAAAABAA0AAAAMAAEAAAACAA0AAAAMAAEAAAADAA0AAAAMAAEAAAABAAwAAAAMAAEAAAACAAwAAAAMAAEAAAABAAEAAAASAAUAAAACAAEAAAASAAUAAAADAAEAAAASAAUAAAABAAIAAAASAAUAAAACAAIAAAASAAUAAAALAAcAAAAMAAEAAAALAAgAAAAMAAEAAAAMAAcAAAAMAAEAAAAMAAgAAAAMAAEAAAA=")
 tile_set = SubResource("TileSet_v8kj3")
 
-[node name="LevelHeaderLabel" type="Label" parent="." unique_id=95074361]
-offset_left = 64.0
-offset_top = 8.0
-offset_right = 1216.0
-offset_bottom = 40.0
-theme_override_colors/font_color = Color(0.98, 0.78, 0.5, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 0.95)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 18
-text = "LEVEL 3 — PLAYER vs Claude"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1125463226]
 position = Vector2(360, 636)
-
-[node name="SpawnPad" type="Line2D" parent="PlayerSpawn" unique_id=1249022823]
-points = PackedVector2Array(-24, 34, 24, 34)
-width = 4.0
-default_color = Color(0.35, 0.95, 1, 0.85)
-
-[node name="SpawnLabel" type="Label" parent="PlayerSpawn" unique_id=1477011466]
-offset_left = -50.0
-offset_top = 14.0
-offset_right = 50.0
-offset_bottom = 37.0
-theme_override_colors/font_color = Color(0.75, 0.95, 1, 0.85)
-theme_override_font_sizes/font_size = 10
-text = "START"
-horizontal_alignment = 1
-
-[node name="CheckpointFlag" type="Area2D" parent="." unique_id=95674785]
-position = Vector2(1140, 632)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointFlag" unique_id=821290559]
-shape = SubResource("RectangleShape2D_sx4db")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointFlag" unique_id=1368988017]
-texture_filter = 1
-scale = Vector2(1.25, 1.25)
-sprite_frames = SubResource("SpriteFrames_c5gc3")
-animation = &"idle"
-autoplay = "idle"
-
-[node name="FlagLabel" type="Label" parent="CheckpointFlag" unique_id=1337645931]
-offset_left = -50.0
-offset_top = -52.0
-offset_right = 50.0
-offset_bottom = -29.0
-theme_override_colors/font_color = Color(0.98, 0.78, 0.5, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.05, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 11
-text = "GOAL"
-horizontal_alignment = 1
 
 [node name="Enemies" type="Node2D" parent="." unique_id=2004746115]
 
@@ -633,8 +579,8 @@ auto_texture_path = "res://assets/images/baddies/CLAUDE_MINI.png"
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Claude_1" unique_id=26262737]
 texture_filter = 1
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("3_qrujo")
+scale = Vector2(2, 2)
+texture = ExtResource("4_cmini")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Claude_1" unique_id=41902178]
 shape = SubResource("RectangleShape2D_mu84n")
@@ -650,8 +596,8 @@ auto_texture_path = "res://assets/images/baddies/CLAUDE_MINI.png"
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Claude_2" unique_id=613672778]
 texture_filter = 1
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("3_qrujo")
+scale = Vector2(2, 2)
+texture = ExtResource("4_cmini")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Claude_2" unique_id=1826445765]
 shape = SubResource("RectangleShape2D_bmsap")

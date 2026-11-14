@@ -1,7 +1,5 @@
 extends Node2D
 
-const OrbScript := preload("res://scripts/energy_orb.gd")
-
 const LEVEL_PATHS: Array[String] = [
 	"res://level1.tscn",
 	"res://level2.tscn",
@@ -25,10 +23,6 @@ var _current_level_node: Node2D = null
 
 var _music_player: AudioStreamPlayer
 var _hp_label: Label
-var _status_label: Label
-var _enemies_label: Label
-var _banner_panel: PanelContainer
-var _banner_label: Label
 
 @onready var _player: CharacterBody2D = $Player
 
@@ -51,11 +45,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.physical_keycode == KEY_R:
-			if _won_game:
-				get_tree().reload_current_scene()
-			else:
-				_load_level(current_level_index)
+		if event.physical_keycode == KEY_R and not _won_game:
+			_load_level(current_level_index)
 
 
 func _load_level(level_idx: int) -> void:
@@ -85,7 +76,6 @@ func _bind_current_level(level_idx: int) -> void:
 	_level_cleared = false
 	_game_over = false
 	_won_game = false
-	_banner_panel.visible = false
 
 	if _current_level_node == null:
 		return
@@ -104,13 +94,6 @@ func _bind_current_level(level_idx: int) -> void:
 					enemy_node.enemy_died.connect(_on_enemy_died)
 				_remaining_enemies += 1
 
-	var flag := _current_level_node.get_node_or_null("CheckpointFlag") as Area2D
-	if flag != null:
-		if not flag.body_entered.is_connected(_on_checkpoint_body_entered):
-			flag.body_entered.connect(_on_checkpoint_body_entered)
-		_set_flag_visual(flag, false)
-
-	_update_hud_labels()
 	_play_level_music(level_idx)
 
 
@@ -136,27 +119,20 @@ func _on_enemy_died(_enemy: Node2D) -> void:
 	_remaining_enemies = maxi(0, _remaining_enemies - 1)
 	if _remaining_enemies == 0 and not _level_cleared:
 		_level_cleared = true
-		OrbScript.play_sfx(self, "res://assets/Sounds/Level completed.wav", -1.0)
-		if _player != null:
-			_player.unlock_movement()
-		if _current_level_node != null:
-			var flag := _current_level_node.get_node_or_null("CheckpointFlag") as Area2D
-			if flag != null:
-				_set_flag_visual(flag, true)
-	_update_hud_labels()
-
-
-func _on_checkpoint_body_entered(body: Node2D) -> void:
-	if body != _player or not _level_cleared or _game_over:
-		return
-	OrbScript.play_sfx(self, "res://assets/Sounds/NewLevel.wav", -1.0)
-	if current_level_index < LEVEL_PATHS.size():
-		call_deferred("_load_level", current_level_index + 1)
-	else:
-		_game_over = true
-		_won_game = true
-		_music_player.stop()
-		_show_banner("ALL AI BOSSES DEFEATED! YOU WIN!\nPress [R] to Play Again", Color(0.35, 1.0, 0.7))
+		if current_level_index < LEVEL_PATHS.size():
+			_play_sfx("res://assets/Sounds/Level completed.wav", -1.0)
+			_play_sfx("res://assets/Sounds/NewLevel.wav", -1.0)
+			call_deferred("_load_level", current_level_index + 1)
+		else:
+			_play_sfx("res://assets/Sounds/Level completed.wav", -1.0)
+			_game_over = true
+			_won_game = true
+			_music_player.stop()
+			if _player != null:
+				_player.recall_active_orb()
+				_player.set_physics_process(false)
+				_player.set_process_unhandled_input(false)
+			get_tree().paused = true
 
 
 func _on_player_hp_changed(current_hp: int, max_hp: int) -> void:
@@ -169,43 +145,27 @@ func _on_player_hp_changed(current_hp: int, max_hp: int) -> void:
 
 
 func _on_player_died() -> void:
+	if _game_over:
+		return
 	_game_over = true
-	_show_banner("DEFEATED! Out of HP (0/5)\nPress [R] to Restart Level %d" % current_level_index, Color(1.0, 0.35, 0.4))
+	call_deferred("_load_level", current_level_index)
 
 
-func _update_hud_labels() -> void:
-	if _level_cleared:
-		_status_label.text = "MOVEMENT: UNLOCKED! Walk to the Flag!"
-		_status_label.add_theme_color_override("font_color", Color(0.35, 1.0, 0.65))
-	else:
-		_status_label.text = "MOVEMENT: LOCKED (Defeat all AI to unlock!)"
-		_status_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.35))
-
-	_enemies_label.text = "ENEMIES LEFT: %d" % _remaining_enemies
-	_enemies_label.add_theme_color_override("font_color", Color(0.35, 1.0, 0.65) if _remaining_enemies == 0 else Color(1.0, 0.55, 0.35))
-
-
-func _set_flag_visual(flag: Area2D, unlocked: bool) -> void:
-	var flag_sprite := flag.get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
-	var flag_lbl := flag.get_node_or_null("FlagLabel") as Label
-	if unlocked:
-		if flag_sprite != null:
-			flag_sprite.modulate = Color.WHITE
-		if flag_lbl != null:
-			flag_lbl.text = "WALK HERE!"
-			flag_lbl.add_theme_color_override("font_color", Color(0.35, 1.0, 0.65))
-	else:
-		if flag_sprite != null:
-			flag_sprite.modulate = Color(0.45, 0.45, 0.55, 0.55)
-		if flag_lbl != null:
-			flag_lbl.text = "LOCKED"
-			flag_lbl.add_theme_color_override("font_color", Color(0.85, 0.85, 0.9, 0.9))
-
-
-func _show_banner(message: String, accent: Color) -> void:
-	_banner_label.text = message
-	_banner_label.add_theme_color_override("font_color", accent)
-	_banner_panel.visible = true
+func _play_sfx(path: String, volume_db: float = 0.0) -> void:
+	if not ResourceLoader.exists(path):
+		return
+	var stream := load(path) as AudioStream
+	if stream == null:
+		return
+	if stream is AudioStreamMP3:
+		(stream as AudioStreamMP3).loop = false
+	var sfx := AudioStreamPlayer.new()
+	sfx.process_mode = Node.PROCESS_MODE_ALWAYS
+	sfx.stream = stream
+	sfx.volume_db = volume_db
+	add_child(sfx)
+	sfx.finished.connect(sfx.queue_free)
+	sfx.play()
 
 
 func _build_hud() -> void:
@@ -214,8 +174,8 @@ func _build_hud() -> void:
 	add_child(hud)
 
 	var bottom_panel := PanelContainer.new()
-	bottom_panel.position = Vector2(24, 674)
-	bottom_panel.size = Vector2(1232, 42)
+	bottom_panel.position = Vector2(24, 676)
+	bottom_panel.size = Vector2(240, 36)
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color(0.04, 0.06, 0.10, 0.90)
 	style.border_color = Color(0.25, 0.70, 0.90, 0.75)
@@ -224,52 +184,9 @@ func _build_hud() -> void:
 	bottom_panel.add_theme_stylebox_override("panel", style)
 	hud.add_child(bottom_panel)
 
-	var vbox := VBoxContainer.new()
-	vbox.add_theme_constant_override("separation", 1)
-	bottom_panel.add_child(vbox)
-
-	var top_row := HBoxContainer.new()
-	top_row.add_theme_constant_override("separation", 20)
-	vbox.add_child(top_row)
-
 	_hp_label = _make_label("HP: ♥ ♥ ♥ ♥ ♥ (5/5)", Color(0.45, 1.0, 0.55), 14)
-	_hp_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	top_row.add_child(_hp_label)
-
-	_status_label = _make_label("MOVEMENT: LOCKED (Defeat all AI to unlock!)", Color(1.0, 0.85, 0.35), 14)
-	_status_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	top_row.add_child(_status_label)
-
-	_enemies_label = _make_label("ENEMIES LEFT: 3", Color(1.0, 0.55, 0.35), 14)
-	_enemies_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_enemies_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	top_row.add_child(_enemies_label)
-
-	var controls_lbl := _make_label(
-		"Left-Click: Shoot  |  Right-Click / E: Recall  |  A/D & Space: Walk to Flag (once unlocked)  |  R: Restart",
-		Color(0.82, 0.90, 1.0),
-		11
-	)
-	controls_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	vbox.add_child(controls_lbl)
-
-	_banner_panel = PanelContainer.new()
-	_banner_panel.visible = false
-	_banner_panel.position = Vector2(340, 82)
-	_banner_panel.size = Vector2(600, 74)
-	var banner_style := StyleBoxFlat.new()
-	banner_style.bg_color = Color(0.05, 0.07, 0.13, 0.94)
-	banner_style.border_color = Color(0.35, 0.95, 0.75, 0.9)
-	banner_style.set_border_width_all(2)
-	banner_style.set_corner_radius_all(8)
-	_banner_panel.add_theme_stylebox_override("panel", banner_style)
-	hud.add_child(_banner_panel)
-
-	_banner_label = _make_label("", Color.WHITE, 16)
-	_banner_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_banner_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	_banner_panel.add_child(_banner_label)
+	_hp_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	bottom_panel.add_child(_hp_label)
 
 
 func _make_label(text: String, color: Color, font_size: int) -> Label:

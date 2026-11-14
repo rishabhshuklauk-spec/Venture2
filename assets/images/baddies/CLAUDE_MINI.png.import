@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr71eso5klgwj"
-path="res://.godot/imported/CLAUDE_MINI.png.png-10d959348683cf5163a511989bd21497.ctex"
+uid="uid://by3upgp2odf17"
+path="res://.godot/imported/CLAUDE_MINI.png-f8875a941fe22ded86b015987f022995.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/baddies/CLAUDE_MINI.png.png"
-dest_files=["res://.godot/imported/CLAUDE_MINI.png.png-10d959348683cf5163a511989bd21497.ctex"]
+source_file="res://assets/images/baddies/CLAUDE_MINI.png"
+dest_files=["res://.godot/imported/CLAUDE_MINI.png-f8875a941fe22ded86b015987f022995.ctex"]
 
 [params]
 

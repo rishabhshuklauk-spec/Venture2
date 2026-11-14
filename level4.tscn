@@ -1,10 +1,10 @@
 [gd_scene format=4]
 
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_t4tfv"]
-[ext_resource type="Texture2D" path="res://assets/images/baddies/GPT.png" id="3_g1tnb"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/GROK.png" id="3_g1tnb"]
 [ext_resource type="Script" path="res://scripts/enemy_1.gd" id="3_pklw6"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_qmr0j"]
-[ext_resource type="Texture2D" path="res://assets/images/baddies/GPT_MINI.png" id="4_pklw6"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/GROK_MINI.png" id="4_pklw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_t4tfv")
@@ -516,63 +516,8 @@ scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAAAAA4AAAASAAUAAAABAAAAAAAMAAUAAAABAA4AAAASAAUAAAACAAAAAAAMAAUAAAACAA4AAAASAAUAAAADAAAAAAAMAAUAAAADAA4AAAASAAUAAAAEAAAAAAAMAAUAAAAEAA4AAAASAAUAAAAFAAAAAAAMAAUAAAAFAA4AAAASAAUAAAAGAAAAAAAMAAUAAAAGAA4AAAASAAUAAAAHAAAAAAAMAAUAAAAHAA4AAAASAAUAAAAIAAAAAAAMAAUAAAAIAA4AAAASAAUAAAAJAAAAAAAMAAUAAAAJAA4AAAASAAUAAAAKAAAAAAAMAAUAAAAKAA4AAAASAAUAAAALAAAAAAAMAAUAAAALAA4AAAASAAUAAAAMAAAAAAAMAAUAAAAMAA4AAAASAAUAAAANAAAAAAAMAAUAAAANAA4AAAASAAUAAAAOAAAAAAAMAAUAAAAOAA4AAAASAAUAAAAPAAAAAAAMAAUAAAAPAA4AAAASAAUAAAAQAAAAAAAMAAUAAAAQAA4AAAASAAUAAAARAAAAAAAMAAUAAAARAA4AAAASAAUAAAASAAAAAAAMAAUAAAASAA4AAAASAAUAAAATAAAAAAAMAAUAAAATAA4AAAASAAUAAAAUAAAAAAAMAAUAAAAUAA4AAAASAAUAAAAVAAAAAAAMAAUAAAAVAA4AAAASAAUAAAAWAAAAAAAMAAUAAAAWAA4AAAASAAUAAAAXAAAAAAAMAAUAAAAXAA4AAAASAAUAAAAYAAAAAAAMAAUAAAAYAA4AAAASAAUAAAAZAAAAAAAMAAUAAAAZAA4AAAASAAUAAAAAAAEAAAAMAAUAAAAZAAEAAAAMAAUAAAAAAAIAAAAMAAUAAAAZAAIAAAAMAAUAAAAAAAMAAAAMAAUAAAAZAAMAAAAMAAUAAAAAAAQAAAAMAAUAAAAZAAQAAAAMAAUAAAAAAAUAAAAMAAUAAAAZAAUAAAAMAAUAAAAAAAYAAAAMAAUAAAAZAAYAAAAMAAUAAAAAAAcAAAAMAAUAAAAZAAcAAAAMAAUAAAAAAAgAAAAMAAUAAAAZAAgAAAAMAAUAAAAAAAkAAAAMAAUAAAAZAAkAAAAMAAUAAAAAAAoAAAAMAAUAAAAZAAoAAAAMAAUAAAAAAAsAAAAMAAUAAAAZAAsAAAAMAAUAAAAAAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAAAA0AAAAMAAUAAAAZAA0AAAAMAAUAAAAJAAcAAAAMAAUAAAAKAAcAAAAMAAUAAAALAAcAAAAMAAUAAAAMAAcAAAAMAAUAAAANAAcAAAAMAAUAAAAOAAcAAAAMAAUAAAAPAAcAAAAMAAUAAAAQAAcAAAAMAAUAAAAJAAQAAAARAAkAAAAJAAUAAAARAAkAAAAJAAYAAAARAAkAAAAQAAQAAAARAAkAAAAQAAUAAAARAAkAAAAQAAYAAAARAAkAAAAMAAgAAAASAAUAAAAMAAkAAAASAAUAAAAMAAoAAAASAAUAAAANAAgAAAASAAUAAAANAAkAAAASAAUAAAANAAoAAAASAAUAAAADAAoAAAAMAAUAAAAEAAoAAAAMAAUAAAAFAAoAAAAMAAUAAAAGAAoAAAAMAAUAAAATAAoAAAAMAAUAAAAUAAoAAAAMAAUAAAAVAAoAAAAMAAUAAAAWAAoAAAAMAAUAAAACAAUAAAAMAAUAAAADAAUAAAAMAAUAAAAEAAUAAAAMAAUAAAAFAAUAAAAMAAUAAAAUAAUAAAAMAAUAAAAVAAUAAAAMAAUAAAAWAAUAAAAMAAUAAAAXAAUAAAAMAAUAAAABAAEAAAAMAAUAAAACAAEAAAAMAAUAAAADAAEAAAAMAAUAAAABAAIAAAAMAAUAAAACAAIAAAAMAAUAAAABAAMAAAAMAAUAAAAWAAEAAAAMAAUAAAAXAAEAAAAMAAUAAAAYAAEAAAAMAAUAAAAXAAIAAAAMAAUAAAAYAAIAAAAMAAUAAAAYAAMAAAAMAAUAAAABAA0AAAASAAUAAAACAA0AAAASAAUAAAADAA0AAAASAAUAAAABAAwAAAASAAUAAAACAAwAAAASAAUAAAABAAsAAAASAAUAAAAWAA0AAAASAAUAAAAXAA0AAAASAAUAAAAYAA0AAAASAAUAAAAXAAwAAAASAAUAAAAYAAwAAAASAAUAAAAYAAsAAAASAAUAAAA=")
 tile_set = SubResource("TileSet_v8kj3")
 
-[node name="LevelHeaderLabel" type="Label" parent="." unique_id=1590681666]
-offset_left = 64.0
-offset_top = 8.0
-offset_right = 1216.0
-offset_bottom = 40.0
-theme_override_colors/font_color = Color(1, 0.18, 0.28, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 0.95)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 18
-text = "LEVEL 4 — FINAL BOSS: PLAYER vs Grok"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1937585088]
 position = Vector2(360, 636)
-
-[node name="SpawnPad" type="Line2D" parent="PlayerSpawn" unique_id=1979745637]
-points = PackedVector2Array(-24, 34, 24, 34)
-width = 4.0
-default_color = Color(0.35, 0.95, 1, 0.85)
-
-[node name="SpawnLabel" type="Label" parent="PlayerSpawn" unique_id=1714693144]
-offset_left = -50.0
-offset_top = 14.0
-offset_right = 50.0
-offset_bottom = 37.0
-theme_override_colors/font_color = Color(0.75, 0.95, 1, 0.85)
-theme_override_font_sizes/font_size = 10
-text = "START"
-horizontal_alignment = 1
-
-[node name="CheckpointFlag" type="Area2D" parent="." unique_id=75953539]
-position = Vector2(920, 632)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointFlag" unique_id=1301546969]
-shape = SubResource("RectangleShape2D_mpwkm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointFlag" unique_id=2102259121]
-texture_filter = 1
-scale = Vector2(1.25, 1.25)
-sprite_frames = SubResource("SpriteFrames_c5gc3")
-animation = &"idle"
-autoplay = "idle"
-
-[node name="FlagLabel" type="Label" parent="CheckpointFlag" unique_id=37217490]
-offset_left = -50.0
-offset_top = -52.0
-offset_right = 50.0
-offset_bottom = -29.0
-theme_override_colors/font_color = Color(1, 0.18, 0.28, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.05, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 11
-text = "GOAL"
-horizontal_alignment = 1
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1009968310]
 
@@ -587,7 +532,6 @@ speed = 55.0
 auto_texture_path = "res://assets/images/baddies/GROK.png"
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Boss_Grok" unique_id=2146808977]
-modulate = Color(1, 0.35, 0.4, 1)
 texture_filter = 1
 scale = Vector2(1.15, 1.15)
 texture = ExtResource("3_g1tnb")
@@ -604,7 +548,6 @@ speed = 70.0
 auto_texture_path = "res://assets/images/baddies/GROK_MINI.png"
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Grok_1" unique_id=1255469309]
-modulate = Color(1, 0.35, 0.4, 1)
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("4_pklw6")
@@ -621,7 +564,6 @@ speed = 70.0
 auto_texture_path = "res://assets/images/baddies/GROK_MINI.png"
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Grok_2" unique_id=145277250]
-modulate = Color(1, 0.35, 0.4, 1)
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("4_pklw6")

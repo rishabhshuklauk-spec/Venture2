@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-const OrbScript := preload("res://scripts/energy_orb.gd")
-
 signal enemy_died(enemy: Node2D)
 
 @export var enemy_name: String = "AI Enemy"
@@ -35,8 +33,14 @@ func _ready() -> void:
 
 	if _sprite != null:
 		_base_modulate = _sprite.modulate
-		if auto_texture_path != "" and ResourceLoader.exists(auto_texture_path):
-			var tex := load(auto_texture_path) as Texture2D
+		var resolved_path := ""
+		if auto_texture_path != "":
+			if ResourceLoader.exists(auto_texture_path):
+				resolved_path = auto_texture_path
+			elif ResourceLoader.exists(auto_texture_path + ".png"):
+				resolved_path = auto_texture_path + ".png"
+		if resolved_path != "":
+			var tex := load(resolved_path) as Texture2D
 			if tex != null:
 				_sprite.texture = tex
 				_base_modulate = Color.WHITE
@@ -98,13 +102,15 @@ func take_damage(amount: int) -> void:
 	_hit_flash_timer = 0.15
 	if _sprite != null:
 		_sprite.modulate = Color(1.0, 0.35, 0.35)
-	OrbScript.play_sfx(self, "res://assets/Sounds/EnemyHit.wav", -1.0)
 	queue_redraw()
 
 	if hp <= 0:
 		_is_dead = true
+		_play_sfx("res://assets/Sounds/RobotDeath.mp3", 0.0)
 		emit_signal("enemy_died", self)
 		queue_free()
+	else:
+		_play_sfx("res://assets/Sounds/EnemyHit.wav", -1.0)
 
 
 func _check_player_contact() -> void:
@@ -118,7 +124,7 @@ func _check_player_contact() -> void:
 		var diff: Vector2 = p.global_position - global_position
 		if absf(diff.x) <= hit_rx and absf(diff.y) <= hit_ry:
 			if p.has_method("take_damage"):
-				p.take_damage(1)
+				p.take_damage(3 if is_boss else 1)
 			_contact_cooldown = 0.8
 			direction *= -1
 			direction_change_timer = 0.0
@@ -136,11 +142,26 @@ func _draw() -> void:
 	var fill_color := Color(0.95, 0.28, 0.35) if is_boss else Color(1.0, 0.65, 0.25)
 	draw_rect(Rect2(bar_pos, Vector2(bar_w * ratio, bar_h)), fill_color, true)
 
-	var font := ThemeDB.fallback_font
-	if font != null:
-		var text_str := "%s %d/%d" % [enemy_name, hp, max_hp]
-		var font_size: int = 12 if is_boss else 10
-		var text_size := font.get_string_size(text_str, HORIZONTAL_ALIGNMENT_CENTER, -1, font_size)
-		var text_pos := Vector2(-text_size.x * 0.5, bar_y - 4.0)
-		draw_string(font, text_pos + Vector2(1, 1), text_str, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, Color(0.0, 0.0, 0.0, 0.9))
-		draw_string(font, text_pos, text_str, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, Color(0.96, 0.98, 1.0, 0.95))
+
+func _play_sfx(path: String, volume_db: float = 0.0) -> void:
+	if not ResourceLoader.exists(path):
+		return
+	var stream := load(path) as AudioStream
+	if stream == null:
+		return
+	if stream is AudioStreamMP3:
+		(stream as AudioStreamMP3).loop = false
+	var sfx := AudioStreamPlayer.new()
+	sfx.stream = stream
+	sfx.volume_db = volume_db
+	var host: Node = self
+	if is_inside_tree():
+		if get_tree().current_scene != null:
+			host = get_tree().current_scene
+		elif get_tree().root.get_node_or_null("Main") != null:
+			host = get_tree().root.get_node("Main")
+		else:
+			host = get_tree().root
+	host.add_child(sfx)
+	sfx.finished.connect(sfx.queue_free)
+	sfx.play()

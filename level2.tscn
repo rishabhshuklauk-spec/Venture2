@@ -1,10 +1,9 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://c5nxvmmnm4aln"]
 
-[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_6q4t8"]
-[ext_resource type="Texture2D" path="res://assets/images/baddies/GEMINI.png" id="3_8tcn8"]
-[ext_resource type="Script" path="res://scripts/enemy_1.gd" id="3_21xmu"]
-[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_r6vdu"]
-[ext_resource type="Texture2D" path="res://assets/images/baddies/GEMINI_MINI.png" id="4_r6vdu"]
+[ext_resource type="Texture2D" uid="uid://bcsstcfxjnue" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_6q4t8"]
+[ext_resource type="Texture2D" uid="uid://us3ogc5brhw1" path="res://assets/images/baddies/GEMINI.png" id="3_8tcn8"]
+[ext_resource type="Script" uid="uid://75dsxr8sqawp" path="res://scripts/enemy_1.gd" id="3_21xmu"]
+[ext_resource type="Texture2D" uid="uid://nbjpcpsaog5v" path="res://assets/images/baddies/GEMINI_MINI.png" id="4_r6vdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_6q4t8")
@@ -302,92 +301,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_v38iq")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jifot"]
-size = Vector2(44, 68)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mx85b"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hx44q"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8vhr"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqrsh"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3l65w"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjtee"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1idop"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_beq0j"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
-atlas = ExtResource("3_r6vdu")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_c5gc3"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mx85b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hx44q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n8vhr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eqrsh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3l65w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rjtee")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1idop")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_beq0j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nauge")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ycv2e")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 12.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i3m3"]
 size = Vector2(68, 114)
 
@@ -509,66 +422,11 @@ default_color = Color(0.55, 0.45, 1, 0.18)
 texture_filter = 1
 position = Vector2(16, 0)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAAAAA4AAAAMAAUAAAABAAAAAAADAAEAAAABAA4AAAAMAAUAAAACAAAAAAADAAEAAAACAA4AAAAMAAUAAAADAAAAAAADAAEAAAADAA4AAAAMAAUAAAAEAAAAAAADAAEAAAAEAA4AAAAMAAUAAAAFAAAAAAADAAEAAAAFAA4AAAAMAAUAAAAGAAAAAAADAAEAAAAGAA4AAAAMAAUAAAAHAAAAAAADAAEAAAAHAA4AAAAMAAUAAAAIAAAAAAADAAEAAAAIAA4AAAAMAAUAAAAJAAAAAAADAAEAAAAJAA4AAAAMAAUAAAAKAAAAAAADAAEAAAAKAA4AAAAMAAUAAAALAAAAAAADAAEAAAALAA4AAAAMAAUAAAAMAAAAAAADAAEAAAAMAA4AAAAMAAUAAAANAAAAAAADAAEAAAANAA4AAAAMAAUAAAAOAAAAAAADAAEAAAAOAA4AAAAMAAUAAAAPAAAAAAADAAEAAAAPAA4AAAAMAAUAAAAQAAAAAAADAAEAAAAQAA4AAAAMAAUAAAARAAAAAAADAAEAAAARAA4AAAAMAAUAAAASAAAAAAADAAEAAAASAA4AAAAMAAUAAAATAAAAAAADAAEAAAATAA4AAAAMAAUAAAAUAAAAAAADAAEAAAAUAA4AAAAMAAUAAAAVAAAAAAADAAEAAAAVAA4AAAAMAAUAAAAWAAAAAAADAAEAAAAWAA4AAAAMAAUAAAAXAAAAAAADAAEAAAAXAA4AAAAMAAUAAAAYAAAAAAADAAEAAAAYAA4AAAAMAAUAAAAZAAAAAAADAAEAAAAZAA4AAAAMAAUAAAAAAAEAAAADAAEAAAAZAAEAAAADAAEAAAAAAAIAAAADAAEAAAAZAAIAAAADAAEAAAAAAAMAAAADAAEAAAAZAAMAAAADAAEAAAAAAAQAAAADAAEAAAAZAAQAAAADAAEAAAAAAAUAAAADAAEAAAAZAAUAAAADAAEAAAAAAAYAAAADAAEAAAAZAAYAAAADAAEAAAAAAAcAAAADAAEAAAAZAAcAAAADAAEAAAAAAAgAAAADAAEAAAAZAAgAAAADAAEAAAAAAAkAAAADAAEAAAAZAAkAAAADAAEAAAAAAAoAAAADAAEAAAAZAAoAAAADAAEAAAAAAAsAAAADAAEAAAAZAAsAAAADAAEAAAAAAAwAAAADAAEAAAAZAAwAAAADAAEAAAAAAA0AAAADAAEAAAAZAA0AAAADAAEAAAAIAAYAAAAMAAUAAAAJAAYAAAAMAAUAAAAKAAYAAAAMAAUAAAALAAYAAAAMAAUAAAAMAAYAAAAMAAUAAAANAAYAAAAMAAUAAAAOAAYAAAAMAAUAAAAPAAYAAAAMAAUAAAAQAAYAAAAMAAUAAAARAAYAAAAMAAUAAAAIAAMAAAABAAAAAAAIAAQAAAABAAAAAAAIAAUAAAABAAAAAAARAAMAAAABAAAAAAARAAQAAAABAAAAAAARAAUAAAABAAAAAAADAAoAAAAMAAUAAAAEAAoAAAAMAAUAAAAFAAoAAAAMAAUAAAAGAAoAAAAMAAUAAAATAAoAAAAMAAUAAAAUAAoAAAAMAAUAAAAVAAoAAAAMAAUAAAAWAAoAAAAMAAUAAAALAAsAAAABAAAAAAAMAAsAAAABAAAAAAANAAsAAAABAAAAAAAOAAsAAAABAAAAAAABAA0AAAAMAAUAAAACAA0AAAAMAAUAAAADAA0AAAAMAAUAAAABAAwAAAAMAAUAAAACAAwAAAAMAAUAAAABAAsAAAAMAAUAAAAWAA0AAAAMAAUAAAAXAA0AAAAMAAUAAAAYAA0AAAAMAAUAAAAXAAwAAAAMAAUAAAAYAAwAAAAMAAUAAAAYAAsAAAAMAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAAAAA4AAAAMAAUAAAABAAAAAAADAAEAAAABAA4AAAAMAAUAAAACAAAAAAADAAEAAAACAA4AAAAMAAUAAAADAAAAAAADAAEAAAADAA4AAAAMAAUAAAAEAAAAAAADAAEAAAAEAA4AAAAMAAUAAAAFAAAAAAADAAEAAAAFAA4AAAAMAAUAAAAGAAAAAAADAAEAAAAGAA4AAAAMAAUAAAAHAAAAAAADAAEAAAAHAA4AAAAMAAUAAAAIAAAAAAADAAEAAAAIAA4AAAAMAAUAAAAJAAAAAAADAAEAAAAJAA4AAAAMAAUAAAAKAAAAAAADAAEAAAAKAA4AAAAMAAUAAAALAAAAAAADAAEAAAALAA4AAAAMAAUAAAAMAAAAAAADAAEAAAAMAA4AAAAMAAUAAAANAAAAAAADAAEAAAANAA4AAAAMAAUAAAAOAAAAAAADAAEAAAAOAA4AAAAMAAUAAAAPAAAAAAADAAEAAAAPAA4AAAAMAAUAAAAQAAAAAAADAAEAAAAQAA4AAAAMAAUAAAARAAAAAAADAAEAAAARAA4AAAAMAAUAAAASAAAAAAADAAEAAAASAA4AAAAMAAUAAAATAAAAAAADAAEAAAATAA4AAAAMAAUAAAAUAAAAAAADAAEAAAAUAA4AAAAMAAUAAAAVAAAAAAADAAEAAAAVAA4AAAAMAAUAAAAWAAAAAAADAAEAAAAWAA4AAAAMAAUAAAAXAAAAAAADAAEAAAAXAA4AAAAMAAUAAAAYAAAAAAADAAEAAAAYAA4AAAAMAAUAAAAZAAAAAAADAAEAAAAZAA4AAAAMAAUAAAAAAAEAAAADAAEAAAAZAAEAAAADAAEAAAAAAAIAAAADAAEAAAAZAAIAAAADAAEAAAAAAAMAAAADAAEAAAAZAAMAAAADAAEAAAAAAAQAAAADAAEAAAAZAAQAAAADAAEAAAAAAAUAAAADAAEAAAAZAAUAAAADAAEAAAAAAAYAAAADAAEAAAAZAAYAAAADAAEAAAAAAAcAAAADAAEAAAAZAAcAAAADAAEAAAAAAAgAAAADAAEAAAAZAAgAAAADAAEAAAAAAAkAAAADAAEAAAAZAAkAAAADAAEAAAAAAAoAAAADAAEAAAAZAAoAAAADAAEAAAAAAAsAAAADAAEAAAAZAAsAAAADAAEAAAAAAAwAAAADAAEAAAAZAAwAAAADAAEAAAAAAA0AAAADAAEAAAAZAA0AAAADAAEAAAAIAAYAAAAMAAUAAAALAAYAAAAMAAUAAAAMAAYAAAAMAAUAAAANAAYAAAAMAAUAAAAOAAYAAAAMAAUAAAARAAYAAAAMAAUAAAAIAAMAAAABAAAAAAAIAAQAAAABAAAAAAAIAAUAAAABAAAAAAARAAMAAAABAAAAAAARAAQAAAABAAAAAAARAAUAAAABAAAAAAADAAoAAAAMAAUAAAAEAAoAAAAMAAUAAAAFAAoAAAAMAAUAAAAGAAoAAAAMAAUAAAATAAoAAAAMAAUAAAAUAAoAAAAMAAUAAAAVAAoAAAAMAAUAAAAWAAoAAAAMAAUAAAABAA0AAAAMAAUAAAACAA0AAAAMAAUAAAADAA0AAAAMAAUAAAABAAwAAAAMAAUAAAACAAwAAAAMAAUAAAABAAsAAAAMAAUAAAAWAA0AAAAMAAUAAAAXAA0AAAAMAAUAAAAYAA0AAAAMAAUAAAAXAAwAAAAMAAUAAAAYAAwAAAAMAAUAAAAYAAsAAAAMAAUAAAA=")
 tile_set = SubResource("TileSet_v8kj3")
-
-[node name="LevelHeaderLabel" type="Label" parent="." unique_id=1583336387]
-offset_left = 64.0
-offset_top = 8.0
-offset_right = 1216.0
-offset_bottom = 40.0
-theme_override_colors/font_color = Color(0.32, 0.58, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 0.95)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 18
-text = "LEVEL 2 — PLAYER vs Gemini"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1401247941]
 position = Vector2(640, 636)
-
-[node name="SpawnPad" type="Line2D" parent="PlayerSpawn" unique_id=207492347]
-points = PackedVector2Array(-24, 34, 24, 34)
-width = 4.0
-default_color = Color(0.35, 0.95, 1, 0.85)
-
-[node name="SpawnLabel" type="Label" parent="PlayerSpawn" unique_id=589083239]
-offset_left = -50.0
-offset_top = 14.0
-offset_right = 50.0
-offset_bottom = 37.0
-theme_override_colors/font_color = Color(0.75, 0.95, 1, 0.85)
-theme_override_font_sizes/font_size = 10
-text = "START"
-horizontal_alignment = 1
-
-[node name="CheckpointFlag" type="Area2D" parent="." unique_id=2009832515]
-position = Vector2(940, 632)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointFlag" unique_id=113080953]
-shape = SubResource("RectangleShape2D_jifot")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointFlag" unique_id=1169925572]
-texture_filter = 1
-scale = Vector2(1.25, 1.25)
-sprite_frames = SubResource("SpriteFrames_c5gc3")
-animation = &"idle"
-autoplay = "idle"
-
-[node name="FlagLabel" type="Label" parent="CheckpointFlag" unique_id=347821202]
-offset_left = -50.0
-offset_top = -52.0
-offset_right = 50.0
-offset_bottom = -29.0
-theme_override_colors/font_color = Color(0.32, 0.58, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.05, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 11
-text = "GOAL"
-horizontal_alignment = 1
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1892372673]
 
