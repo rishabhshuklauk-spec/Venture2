@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dygidsxycg4st"]
 
 [ext_resource type="Texture2D" uid="uid://c88huooxgo2i7" path="res://assets/images/Player/Idle (32x32).png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://cjxjvleb63a5f" path="res://scripts/node_2d.gd" id="1_epypp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
 atlas = ExtResource("1_0e48y")
@@ -89,6 +90,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=30529122]
 scale = Vector2(3, 3)
+script = ExtResource("1_epypp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752654922]
 texture_filter = 1

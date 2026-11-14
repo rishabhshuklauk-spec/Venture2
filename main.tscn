@@ -6,3 +6,7 @@
 
 [node name="Player" parent="." unique_id=30529122 instance=ExtResource("1_ig7tw")]
 position = Vector2(576, 296)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1741586219]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=884135036]
