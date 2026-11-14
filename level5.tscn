@@ -1,7 +1,7 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://b42ncw4ps7w48"]
 
-[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_t4tfv"]
-[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_qmr0j"]
+[ext_resource type="Texture2D" uid="uid://bcsstcfxjnue" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_t4tfv"]
+[ext_resource type="Texture2D" uid="uid://dvmw6nwkall46" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_qmr0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_t4tfv")

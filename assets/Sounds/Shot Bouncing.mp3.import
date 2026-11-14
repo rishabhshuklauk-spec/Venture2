@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b74sete2a3tx8"
+path="res://.godot/imported/Shot Bouncing.mp3-4420ec60224aef12730a7b4195894f76.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Shot Bouncing.mp3"
+dest_files=["res://.godot/imported/Shot Bouncing.mp3-4420ec60224aef12730a7b4195894f76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
