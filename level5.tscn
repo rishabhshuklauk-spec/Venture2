@@ -1,7 +1,6 @@
 [gd_scene format=4]
 
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_t4tfv"]
-[ext_resource type="Script" path="res://enemy.gd" id="2_bf6rn"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_qmr0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
@@ -300,21 +299,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_v38iq")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2odi"]
-size = Vector2(68, 68)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8at3q"]
-size = Vector2(34, 34)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_87x5k"]
-size = Vector2(34, 34)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfwe1"]
-size = Vector2(34, 34)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3j2p"]
-size = Vector2(34, 34)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpwkm"]
 size = Vector2(44, 68)
 
@@ -517,7 +501,7 @@ default_color = Color(0.95, 0.95, 1, 0.12)
 texture_filter = 1
 position = Vector2(16, 0)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAAAAA4AAAASAAUAAAABAAAAAAAMAAUAAAABAA4AAAASAAUAAAACAAAAAAAMAAUAAAACAA4AAAASAAUAAAADAAAAAAAMAAUAAAADAA4AAAASAAUAAAAEAAAAAAAMAAUAAAAEAA4AAAASAAUAAAAFAAAAAAAMAAUAAAAFAA4AAAASAAUAAAAGAAAAAAAMAAUAAAAGAA4AAAASAAUAAAAHAAAAAAAMAAUAAAAHAA4AAAASAAUAAAAIAAAAAAAMAAUAAAAIAA4AAAASAAUAAAAJAAAAAAAMAAUAAAAJAA4AAAASAAUAAAAKAAAAAAAMAAUAAAAKAA4AAAASAAUAAAALAAAAAAAMAAUAAAALAA4AAAASAAUAAAAMAAAAAAAMAAUAAAAMAA4AAAASAAUAAAANAAAAAAAMAAUAAAANAA4AAAASAAUAAAAOAAAAAAAMAAUAAAAOAA4AAAASAAUAAAAPAAAAAAAMAAUAAAAPAA4AAAASAAUAAAAQAAAAAAAMAAUAAAAQAA4AAAASAAUAAAARAAAAAAAMAAUAAAARAA4AAAASAAUAAAASAAAAAAAMAAUAAAASAA4AAAASAAUAAAATAAAAAAAMAAUAAAATAA4AAAASAAUAAAAUAAAAAAAMAAUAAAAUAA4AAAASAAUAAAAVAAAAAAAMAAUAAAAVAA4AAAASAAUAAAAWAAAAAAAMAAUAAAAWAA4AAAASAAUAAAAXAAAAAAAMAAUAAAAXAA4AAAASAAUAAAAYAAAAAAAMAAUAAAAYAA4AAAASAAUAAAAZAAAAAAAMAAUAAAAZAA4AAAASAAUAAAAAAAEAAAAMAAUAAAAZAAEAAAAMAAUAAAAAAAIAAAAMAAUAAAAZAAIAAAAMAAUAAAAAAAMAAAAMAAUAAAAZAAMAAAAMAAUAAAAAAAQAAAAMAAUAAAAZAAQAAAAMAAUAAAAAAAUAAAAMAAUAAAAZAAUAAAAMAAUAAAAAAAYAAAAMAAUAAAAZAAYAAAAMAAUAAAAAAAcAAAAMAAUAAAAZAAcAAAAMAAUAAAAAAAgAAAAMAAUAAAAZAAgAAAAMAAUAAAAAAAkAAAAMAAUAAAAZAAkAAAAMAAUAAAAAAAoAAAAMAAUAAAAZAAoAAAAMAAUAAAAAAAsAAAAMAAUAAAAZAAsAAAAMAAUAAAAAAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAAAA0AAAAMAAUAAAAZAA0AAAAMAAUAAAAJAAcAAAAMAAUAAAAKAAcAAAAMAAUAAAALAAcAAAAMAAUAAAAMAAcAAAAMAAUAAAANAAcAAAAMAAUAAAAOAAcAAAAMAAUAAAAPAAcAAAAMAAUAAAAQAAcAAAAMAAUAAAAJAAQAAAARAAkAAAAJAAUAAAARAAkAAAAJAAYAAAARAAkAAAAQAAQAAAARAAkAAAAQAAUAAAARAAkAAAAQAAYAAAARAAkAAAAMAAgAAAASAAUAAAAMAAkAAAASAAUAAAAMAAoAAAASAAUAAAANAAgAAAASAAUAAAANAAkAAAASAAUAAAANAAoAAAASAAUAAAADAAoAAAAMAAUAAAAEAAoAAAAMAAUAAAAFAAoAAAAMAAUAAAAGAAoAAAAMAAUAAAATAAoAAAAMAAUAAAAUAAoAAAAMAAUAAAAVAAoAAAAMAAUAAAAWAAoAAAAMAAUAAAACAAUAAAAMAAUAAAADAAUAAAAMAAUAAAAEAAUAAAAMAAUAAAAFAAUAAAAMAAUAAAAUAAUAAAAMAAUAAAAVAAUAAAAMAAUAAAAWAAUAAAAMAAUAAAAXAAUAAAAMAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAAAAA4AAAASAAUAAAABAAAAAAAMAAUAAAABAA4AAAASAAUAAAACAAAAAAAMAAUAAAACAA4AAAASAAUAAAADAAAAAAAMAAUAAAADAA4AAAASAAUAAAAEAAAAAAAMAAUAAAAEAA4AAAASAAUAAAAFAAAAAAAMAAUAAAAFAA4AAAASAAUAAAAGAAAAAAAMAAUAAAAGAA4AAAASAAUAAAAHAAAAAAAMAAUAAAAHAA4AAAASAAUAAAAIAAAAAAAMAAUAAAAIAA4AAAASAAUAAAAJAAAAAAAMAAUAAAAJAA4AAAASAAUAAAAKAAAAAAAMAAUAAAAKAA4AAAASAAUAAAALAAAAAAAMAAUAAAALAA4AAAASAAUAAAAMAAAAAAAMAAUAAAAMAA4AAAASAAUAAAANAAAAAAAMAAUAAAANAA4AAAASAAUAAAAOAAAAAAAMAAUAAAAOAA4AAAASAAUAAAAPAAAAAAAMAAUAAAAPAA4AAAASAAUAAAAQAAAAAAAMAAUAAAAQAA4AAAASAAUAAAARAAAAAAAMAAUAAAARAA4AAAASAAUAAAASAAAAAAAMAAUAAAASAA4AAAASAAUAAAATAAAAAAAMAAUAAAATAA4AAAASAAUAAAAUAAAAAAAMAAUAAAAUAA4AAAASAAUAAAAVAAAAAAAMAAUAAAAVAA4AAAASAAUAAAAWAAAAAAAMAAUAAAAWAA4AAAASAAUAAAAXAAAAAAAMAAUAAAAXAA4AAAASAAUAAAAYAAAAAAAMAAUAAAAYAA4AAAASAAUAAAAZAAAAAAAMAAUAAAAZAA4AAAASAAUAAAAAAAEAAAAMAAUAAAAZAAEAAAAMAAUAAAAAAAIAAAAMAAUAAAAZAAIAAAAMAAUAAAAAAAMAAAAMAAUAAAAZAAMAAAAMAAUAAAAAAAQAAAAMAAUAAAAZAAQAAAAMAAUAAAAAAAUAAAAMAAUAAAAZAAUAAAAMAAUAAAAAAAYAAAAMAAUAAAAZAAYAAAAMAAUAAAAAAAcAAAAMAAUAAAAZAAcAAAAMAAUAAAAAAAgAAAAMAAUAAAAZAAgAAAAMAAUAAAAAAAkAAAAMAAUAAAAZAAkAAAAMAAUAAAAAAAoAAAAMAAUAAAAZAAoAAAAMAAUAAAAAAAsAAAAMAAUAAAAZAAsAAAAMAAUAAAAAAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAAAA0AAAAMAAUAAAAZAA0AAAAMAAUAAAAJAAcAAAAMAAUAAAAKAAcAAAAMAAUAAAALAAcAAAAMAAUAAAAMAAcAAAAMAAUAAAANAAcAAAAMAAUAAAAOAAcAAAAMAAUAAAAPAAcAAAAMAAUAAAAQAAcAAAAMAAUAAAAJAAQAAAARAAkAAAAJAAUAAAARAAkAAAAJAAYAAAARAAkAAAAQAAQAAAARAAkAAAAQAAUAAAARAAkAAAAQAAYAAAARAAkAAAAMAAgAAAASAAUAAAAMAAkAAAASAAUAAAAMAAoAAAASAAUAAAANAAgAAAASAAUAAAANAAkAAAASAAUAAAANAAoAAAASAAUAAAADAAoAAAAMAAUAAAAEAAoAAAAMAAUAAAAFAAoAAAAMAAUAAAAGAAoAAAAMAAUAAAATAAoAAAAMAAUAAAAUAAoAAAAMAAUAAAAVAAoAAAAMAAUAAAAWAAoAAAAMAAUAAAACAAUAAAAMAAUAAAADAAUAAAAMAAUAAAAEAAUAAAAMAAUAAAAFAAUAAAAMAAUAAAAUAAUAAAAMAAUAAAAVAAUAAAAMAAUAAAAWAAUAAAAMAAUAAAAXAAUAAAAMAAUAAAABAAEAAAAMAAUAAAACAAEAAAAMAAUAAAADAAEAAAAMAAUAAAABAAIAAAAMAAUAAAACAAIAAAAMAAUAAAABAAMAAAAMAAUAAAAWAAEAAAAMAAUAAAAXAAEAAAAMAAUAAAAYAAEAAAAMAAUAAAAXAAIAAAAMAAUAAAAYAAIAAAAMAAUAAAAYAAMAAAAMAAUAAAABAA0AAAASAAUAAAACAA0AAAASAAUAAAADAA0AAAASAAUAAAABAAwAAAASAAUAAAACAAwAAAASAAUAAAABAAsAAAASAAUAAAAWAA0AAAASAAUAAAAXAA0AAAASAAUAAAAYAA0AAAASAAUAAAAXAAwAAAASAAUAAAAYAAwAAAASAAUAAAAYAAsAAAASAAUAAAA=")
 tile_set = SubResource("TileSet_v8kj3")
 
 [node name="LevelHeaderLabel" type="Label" parent="." unique_id=1590681666]
@@ -525,411 +509,13 @@ offset_left = 64.0
 offset_top = 8.0
 offset_right = 1216.0
 offset_bottom = 40.0
-theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(1, 0.18, 0.28, 1)
 theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 0.95)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
 text = "LEVEL 5 — FINAL BOSS: PLAYER vs Grok"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Ramps" type="Node2D" parent="." unique_id=227514608]
-
-[node name="CornerRampTopLeft" type="StaticBody2D" parent="Ramps" unique_id=637651433 groups=["walls"]]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/CornerRampTopLeft" unique_id=1105803833]
-polygon = PackedVector2Array(64, 48, 208, 48, 64, 192)
-
-[node name="VisualPolygon" type="Polygon2D" parent="Ramps/CornerRampTopLeft" unique_id=1543911207]
-color = Color(0.16, 0.07, 0.1, 1)
-polygon = PackedVector2Array(64, 48, 208, 48, 64, 192)
-
-[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/CornerRampTopLeft" unique_id=1199714031]
-points = PackedVector2Array(208, 48, 64, 192)
-width = 4.5
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="CornerRampTopRight" type="StaticBody2D" parent="Ramps" unique_id=367517582 groups=["walls"]]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/CornerRampTopRight" unique_id=91974363]
-polygon = PackedVector2Array(1216, 48, 1216, 192, 1072, 48)
-
-[node name="VisualPolygon" type="Polygon2D" parent="Ramps/CornerRampTopRight" unique_id=1879335664]
-color = Color(0.16, 0.07, 0.1, 1)
-polygon = PackedVector2Array(1216, 48, 1216, 192, 1072, 48)
-
-[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/CornerRampTopRight" unique_id=412925469]
-points = PackedVector2Array(1072, 48, 1216, 192)
-width = 4.5
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="CornerRampBottomLeft" type="StaticBody2D" parent="Ramps" unique_id=736211303 groups=["walls"]]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/CornerRampBottomLeft" unique_id=289298252]
-polygon = PackedVector2Array(64, 528, 208, 672, 64, 672)
-
-[node name="VisualPolygon" type="Polygon2D" parent="Ramps/CornerRampBottomLeft" unique_id=1592778080]
-color = Color(0.14, 0.14, 0.18, 1)
-polygon = PackedVector2Array(64, 528, 208, 672, 64, 672)
-
-[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/CornerRampBottomLeft" unique_id=220087865]
-points = PackedVector2Array(64, 528, 208, 672)
-width = 4.5
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="RampHint" type="Label" parent="Ramps/CornerRampBottomLeft" unique_id=1632810957]
-offset_left = 70.0
-offset_top = 642.0
-offset_right = 70.0
-offset_bottom = 642.0
-theme_override_font_sizes/font_size = 11
-theme_override_colors/font_color = Color(0.95, 0.96, 1, 1)
-text = "X-RAMP"
-
-[node name="CornerRampBottomRight" type="StaticBody2D" parent="Ramps" unique_id=2016282680 groups=["walls"]]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/CornerRampBottomRight" unique_id=1747839408]
-polygon = PackedVector2Array(1216, 528, 1216, 672, 1072, 672)
-
-[node name="VisualPolygon" type="Polygon2D" parent="Ramps/CornerRampBottomRight" unique_id=2029773885]
-color = Color(0.14, 0.14, 0.18, 1)
-polygon = PackedVector2Array(1216, 528, 1216, 672, 1072, 672)
-
-[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/CornerRampBottomRight" unique_id=58189186]
-points = PackedVector2Array(1216, 528, 1072, 672)
-width = 4.5
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="RampHint" type="Label" parent="Ramps/CornerRampBottomRight" unique_id=445220907]
-offset_left = 1142.0
-offset_top = 642.0
-offset_right = 1142.0
-offset_bottom = 642.0
-theme_override_font_sizes/font_size = 11
-theme_override_colors/font_color = Color(0.95, 0.96, 1, 1)
-text = "X-RAMP"
-
-[node name="Enemies" type="Node2D" parent="." unique_id=1825341189]
-
-[node name="Boss_Grok" type="CharacterBody2D" parent="Enemies" unique_id=259601133 groups=["boss", "enemies"]]
-position = Vector2(640, 286)
-collision_layer = 4
-script = ExtResource("2_bf6rn")
-enemy_name = "FINAL BOSS: Grok-3"
-is_boss = true
-max_hp = 500
-hp = 500
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_Grok" unique_id=1068964789]
-shape = SubResource("RectangleShape2D_x2odi")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Boss_Grok" unique_id=50810869]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Boss_Grok" unique_id=1852297985]
-points = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236, 31.411903, 13.011236)
-width = 3.5
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="SingularityRing" type="Line2D" parent="Enemies/Boss_Grok" unique_id=2007863562]
-points = PackedVector2Array(18.7, 0, 17.276548, 7.1561804, 13.222898, 13.222898, 7.1561804, 17.276548, 1.145007e-15, 18.7, -7.1561804, 17.276548, -13.222898, 13.222898, -17.276548, 7.1561804, -18.7, 2.290014e-15, -17.276548, -7.1561804, -13.222898, -13.222898, -7.1561804, -17.276548, -3.435021e-15, -18.7, 7.1561804, -17.276548, 13.222898, -13.222898, 17.276548, -7.1561804, 18.7, 0)
-width = 2.6
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="XSlash1" type="Line2D" parent="Enemies/Boss_Grok" unique_id=1293025431]
-points = PackedVector2Array(-16.5, -16.5, 16.5, 16.5)
-width = 4.2
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="XSlash2" type="Line2D" parent="Enemies/Boss_Grok" unique_id=1655028231]
-points = PackedVector2Array(16.5, -16.5, -16.5, 16.5)
-width = 4.2
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Boss_Grok" unique_id=1499034735]
-offset_left = -44.0
-offset_top = -49.0
-offset_right = 44.0
-offset_bottom = -39.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Boss_Grok" unique_id=511276943]
-offset_left = -43.0
-offset_top = -48.0
-offset_right = 43.0
-offset_bottom = -40.0
-mouse_filter = 2
-color = Color(0.95, 0.96, 1, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Boss_Grok" unique_id=1878059855]
-offset_left = -95.0
-offset_top = -70.0
-offset_right = 95.0
-offset_bottom = -47.0
-theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(1, 0.18, 0.28, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "FINAL BOSS: Grok-3 (500 HP)"
-horizontal_alignment = 1
-
-[node name="Underling_GrokMini_1" type="CharacterBody2D" parent="Enemies" unique_id=635255860 groups=["enemies", "underlings"]]
-position = Vector2(232, 450)
-collision_layer = 4
-script = ExtResource("2_bf6rn")
-enemy_name = "Grok Mini α"
-max_hp = 65
-hp = 65
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GrokMini_1" unique_id=552844290]
-shape = SubResource("RectangleShape2D_8at3q")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GrokMini_1" unique_id=621884832]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GrokMini_1" unique_id=1065756310]
-points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
-width = 2.2
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="SingularityRing" type="Line2D" parent="Enemies/Underling_GrokMini_1" unique_id=372368655]
-points = PackedVector2Array(8.5, 0, 7.852976, 3.252809, 6.0104074, 6.0104074, 3.252809, 7.852976, 5.204577e-16, 8.5, -3.252809, 7.852976, -6.0104074, 6.0104074, -7.852976, 3.252809, -8.5, 1.0409154e-15, -7.852976, -3.252809, -6.0104074, -6.0104074, -3.252809, -7.852976, -1.5613731e-15, -8.5, 3.252809, -7.852976, 6.0104074, -6.0104074, 7.852976, -3.252809, 8.5, 0)
-width = 1.8
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="XSlash1" type="Line2D" parent="Enemies/Underling_GrokMini_1" unique_id=1992287743]
-points = PackedVector2Array(-7.5, -7.5, 7.5, 7.5)
-width = 2.4
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="XSlash2" type="Line2D" parent="Enemies/Underling_GrokMini_1" unique_id=1599752039]
-points = PackedVector2Array(7.5, -7.5, -7.5, 7.5)
-width = 2.4
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GrokMini_1" unique_id=477775171]
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 23.0
-offset_bottom = -25.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GrokMini_1" unique_id=469296929]
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 22.0
-offset_bottom = -26.0
-mouse_filter = 2
-color = Color(0.95, 0.96, 1, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Underling_GrokMini_1" unique_id=1120690422]
-offset_left = -95.0
-offset_top = -53.0
-offset_right = 95.0
-offset_bottom = -30.0
-theme_override_font_sizes/font_size = 10
-theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "Grok Mini α (65 HP)"
-horizontal_alignment = 1
-
-[node name="Underling_GrokMini_2" type="CharacterBody2D" parent="Enemies" unique_id=1351390908 groups=["enemies", "underlings"]]
-position = Vector2(1000, 450)
-collision_layer = 4
-script = ExtResource("2_bf6rn")
-enemy_name = "Grok Mini β"
-max_hp = 65
-hp = 65
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GrokMini_2" unique_id=1970312365]
-shape = SubResource("RectangleShape2D_87x5k")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GrokMini_2" unique_id=1590100624]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GrokMini_2" unique_id=1635622278]
-points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
-width = 2.2
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="SingularityRing" type="Line2D" parent="Enemies/Underling_GrokMini_2" unique_id=1112998244]
-points = PackedVector2Array(8.5, 0, 7.852976, 3.252809, 6.0104074, 6.0104074, 3.252809, 7.852976, 5.204577e-16, 8.5, -3.252809, 7.852976, -6.0104074, 6.0104074, -7.852976, 3.252809, -8.5, 1.0409154e-15, -7.852976, -3.252809, -6.0104074, -6.0104074, -3.252809, -7.852976, -1.5613731e-15, -8.5, 3.252809, -7.852976, 6.0104074, -6.0104074, 7.852976, -3.252809, 8.5, 0)
-width = 1.8
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="XSlash1" type="Line2D" parent="Enemies/Underling_GrokMini_2" unique_id=1270945244]
-points = PackedVector2Array(-7.5, -7.5, 7.5, 7.5)
-width = 2.4
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="XSlash2" type="Line2D" parent="Enemies/Underling_GrokMini_2" unique_id=1834537198]
-points = PackedVector2Array(7.5, -7.5, -7.5, 7.5)
-width = 2.4
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GrokMini_2" unique_id=1135656377]
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 23.0
-offset_bottom = -25.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GrokMini_2" unique_id=1127373940]
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 22.0
-offset_bottom = -26.0
-mouse_filter = 2
-color = Color(1, 0.18, 0.28, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Underling_GrokMini_2" unique_id=560992445]
-offset_left = -95.0
-offset_top = -53.0
-offset_right = 95.0
-offset_bottom = -30.0
-theme_override_font_sizes/font_size = 10
-theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "Grok Mini β (65 HP)"
-horizontal_alignment = 1
-
-[node name="Underling_UnhingedBot" type="CharacterBody2D" parent="Enemies" unique_id=850687427 groups=["enemies", "underlings"]]
-position = Vector2(184, 210)
-collision_layer = 4
-script = ExtResource("2_bf6rn")
-enemy_name = "Unhinged Mode Bot"
-max_hp = 65
-hp = 65
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_UnhingedBot" unique_id=625207291]
-shape = SubResource("RectangleShape2D_yfwe1")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_UnhingedBot" unique_id=1648563256]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_UnhingedBot" unique_id=1312626743]
-points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
-width = 2.2
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="SingularityRing" type="Line2D" parent="Enemies/Underling_UnhingedBot" unique_id=307429917]
-points = PackedVector2Array(8.5, 0, 7.852976, 3.252809, 6.0104074, 6.0104074, 3.252809, 7.852976, 5.204577e-16, 8.5, -3.252809, 7.852976, -6.0104074, 6.0104074, -7.852976, 3.252809, -8.5, 1.0409154e-15, -7.852976, -3.252809, -6.0104074, -6.0104074, -3.252809, -7.852976, -1.5613731e-15, -8.5, 3.252809, -7.852976, 6.0104074, -6.0104074, 7.852976, -3.252809, 8.5, 0)
-width = 1.8
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="XSlash1" type="Line2D" parent="Enemies/Underling_UnhingedBot" unique_id=1367606399]
-points = PackedVector2Array(-7.5, -7.5, 7.5, 7.5)
-width = 2.4
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="XSlash2" type="Line2D" parent="Enemies/Underling_UnhingedBot" unique_id=2097215653]
-points = PackedVector2Array(7.5, -7.5, -7.5, 7.5)
-width = 2.4
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_UnhingedBot" unique_id=804878022]
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 23.0
-offset_bottom = -25.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_UnhingedBot" unique_id=1665886816]
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 22.0
-offset_bottom = -26.0
-mouse_filter = 2
-color = Color(1, 0.18, 0.28, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Underling_UnhingedBot" unique_id=1391196885]
-offset_left = -95.0
-offset_top = -53.0
-offset_right = 95.0
-offset_bottom = -30.0
-theme_override_font_sizes/font_size = 10
-theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "Unhinged Mode Bot (65 HP)"
-horizontal_alignment = 1
-
-[node name="Underling_SuperCluster" type="CharacterBody2D" parent="Enemies" unique_id=499581786 groups=["enemies", "underlings"]]
-position = Vector2(1048, 210)
-collision_layer = 4
-script = ExtResource("2_bf6rn")
-enemy_name = "SuperCluster Node"
-max_hp = 65
-hp = 65
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_SuperCluster" unique_id=972881359]
-shape = SubResource("RectangleShape2D_p3j2p")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_SuperCluster" unique_id=1865096980]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_SuperCluster" unique_id=779063118]
-points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
-width = 2.2
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="SingularityRing" type="Line2D" parent="Enemies/Underling_SuperCluster" unique_id=2052119425]
-points = PackedVector2Array(8.5, 0, 7.852976, 3.252809, 6.0104074, 6.0104074, 3.252809, 7.852976, 5.204577e-16, 8.5, -3.252809, 7.852976, -6.0104074, 6.0104074, -7.852976, 3.252809, -8.5, 1.0409154e-15, -7.852976, -3.252809, -6.0104074, -6.0104074, -3.252809, -7.852976, -1.5613731e-15, -8.5, 3.252809, -7.852976, 6.0104074, -6.0104074, 7.852976, -3.252809, 8.5, 0)
-width = 1.8
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="XSlash1" type="Line2D" parent="Enemies/Underling_SuperCluster" unique_id=1259001711]
-points = PackedVector2Array(-7.5, -7.5, 7.5, 7.5)
-width = 2.4
-default_color = Color(1, 0.18, 0.28, 1)
-
-[node name="XSlash2" type="Line2D" parent="Enemies/Underling_SuperCluster" unique_id=1791236809]
-points = PackedVector2Array(7.5, -7.5, -7.5, 7.5)
-width = 2.4
-default_color = Color(0.95, 0.96, 1, 1)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_SuperCluster" unique_id=1048532844]
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 23.0
-offset_bottom = -25.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_SuperCluster" unique_id=1544670386]
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 22.0
-offset_bottom = -26.0
-mouse_filter = 2
-color = Color(0.95, 0.96, 1, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Underling_SuperCluster" unique_id=455446408]
-offset_left = -95.0
-offset_top = -53.0
-offset_right = 95.0
-offset_bottom = -30.0
-theme_override_font_sizes/font_size = 10
-theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "SuperCluster Node (65 HP)"
-horizontal_alignment = 1
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1937585088]
 position = Vector2(360, 636)
@@ -944,8 +530,8 @@ offset_left = -50.0
 offset_top = 14.0
 offset_right = 50.0
 offset_bottom = 37.0
-theme_override_font_sizes/font_size = 10
 theme_override_colors/font_color = Color(0.75, 0.95, 1, 0.85)
+theme_override_font_sizes/font_size = 10
 text = "START"
 horizontal_alignment = 1
 
@@ -969,9 +555,9 @@ offset_left = -50.0
 offset_top = -52.0
 offset_right = 50.0
 offset_bottom = -29.0
-theme_override_font_sizes/font_size = 11
 theme_override_colors/font_color = Color(1, 0.18, 0.28, 1)
 theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.05, 1)
 theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
 text = "GOAL"
 horizontal_alignment = 1

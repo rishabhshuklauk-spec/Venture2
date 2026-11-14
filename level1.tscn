@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_jwv3a"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="2_dopym"]
-[ext_resource type="Script" path="res://enemy.gd" id="2_ootpb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_jwv3a")
@@ -300,18 +299,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_v38iq")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crycw"]
-size = Vector2(68, 68)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2041"]
-size = Vector2(34, 34)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4tn"]
-size = Vector2(34, 34)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_usj0q"]
-size = Vector2(34, 34)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j5gb"]
 size = Vector2(44, 68)
 
@@ -504,7 +491,7 @@ default_color = Color(0.06, 0.84, 0.64, 0.08)
 texture_filter = 1
 position = Vector2(16, 0)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAAAAA4AAAAHAAAAAAABAAAAAAAMAAUAAAABAA4AAAAHAAAAAAACAAAAAAAMAAUAAAACAA4AAAAHAAAAAAADAAAAAAAMAAUAAAADAA4AAAAHAAAAAAAEAAAAAAAMAAUAAAAEAA4AAAAHAAAAAAAFAAAAAAAMAAUAAAAFAA4AAAAHAAAAAAAGAAAAAAAMAAUAAAAGAA4AAAAHAAAAAAAHAAAAAAAMAAUAAAAHAA4AAAAHAAAAAAAIAAAAAAAMAAUAAAAIAA4AAAAHAAAAAAAJAAAAAAAMAAUAAAAJAA4AAAAHAAAAAAAKAAAAAAAMAAUAAAAKAA4AAAAHAAAAAAALAAAAAAAMAAUAAAALAA4AAAAHAAAAAAAMAAAAAAAMAAUAAAAMAA4AAAAHAAAAAAANAAAAAAAMAAUAAAANAA4AAAAHAAAAAAAOAAAAAAAMAAUAAAAOAA4AAAAHAAAAAAAPAAAAAAAMAAUAAAAPAA4AAAAHAAAAAAAQAAAAAAAMAAUAAAAQAA4AAAAHAAAAAAARAAAAAAAMAAUAAAARAA4AAAAHAAAAAAASAAAAAAAMAAUAAAASAA4AAAAHAAAAAAATAAAAAAAMAAUAAAATAA4AAAAHAAAAAAAUAAAAAAAMAAUAAAAUAA4AAAAHAAAAAAAVAAAAAAAMAAUAAAAVAA4AAAAHAAAAAAAWAAAAAAAMAAUAAAAWAA4AAAAHAAAAAAAXAAAAAAAMAAUAAAAXAA4AAAAHAAAAAAAYAAAAAAAMAAUAAAAYAA4AAAAHAAAAAAAZAAAAAAAMAAUAAAAZAA4AAAAHAAAAAAAAAAEAAAAMAAUAAAAZAAEAAAAMAAUAAAAAAAIAAAAMAAUAAAAZAAIAAAAMAAUAAAAAAAMAAAAMAAUAAAAZAAMAAAAMAAUAAAAAAAQAAAAMAAUAAAAZAAQAAAAMAAUAAAAAAAUAAAAMAAUAAAAZAAUAAAAMAAUAAAAAAAYAAAAMAAUAAAAZAAYAAAAMAAUAAAAAAAcAAAAMAAUAAAAZAAcAAAAMAAUAAAAAAAgAAAAMAAUAAAAZAAgAAAAMAAUAAAAAAAkAAAAMAAUAAAAZAAkAAAAMAAUAAAAAAAoAAAAMAAUAAAAZAAoAAAAMAAUAAAAAAAsAAAAMAAUAAAAZAAsAAAAMAAUAAAAAAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAAAA0AAAAMAAUAAAAZAA0AAAAMAAUAAAABAAcAAAAHAAAAAAACAAcAAAAHAAAAAAADAAcAAAAHAAAAAAAEAAcAAAAHAAAAAAAFAAcAAAAHAAAAAAAGAAcAAAAHAAAAAAAHAAcAAAAHAAAAAAAIAAcAAAAHAAAAAAAJAAcAAAAHAAAAAAAJAAUAAAARAAkAAAAJAAYAAAARAAkAAAAIAAgAAAAMAAUAAAAIAAkAAAAMAAUAAAAIAAoAAAAMAAUAAAAIAAsAAAAMAAUAAAAIAAwAAAAMAAUAAAAIAA0AAAAMAAUAAAAPAAsAAAAHAAAAAAAQAAsAAAAHAAAAAAARAAsAAAAHAAAAAAAUAAgAAAAHAAAAAAAVAAgAAAAHAAAAAAAWAAgAAAAHAAAAAAAXAAgAAAAHAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAAAAA4AAAAHAAAAAAABAAAAAAAMAAUAAAABAA4AAAAHAAAAAAACAAAAAAAMAAUAAAACAA4AAAAHAAAAAAADAAAAAAAMAAUAAAADAA4AAAAHAAAAAAAEAAAAAAAMAAUAAAAEAA4AAAAHAAAAAAAFAAAAAAAMAAUAAAAFAA4AAAAHAAAAAAAGAAAAAAAMAAUAAAAGAA4AAAAHAAAAAAAHAAAAAAAMAAUAAAAHAA4AAAAHAAAAAAAIAAAAAAAMAAUAAAAIAA4AAAAHAAAAAAAJAAAAAAAMAAUAAAAJAA4AAAAHAAAAAAAKAAAAAAAMAAUAAAAKAA4AAAAHAAAAAAALAAAAAAAMAAUAAAALAA4AAAAHAAAAAAAMAAAAAAAMAAUAAAAMAA4AAAAHAAAAAAANAAAAAAAMAAUAAAANAA4AAAAHAAAAAAAOAAAAAAAMAAUAAAAOAA4AAAAHAAAAAAAPAAAAAAAMAAUAAAAPAA4AAAAHAAAAAAAQAAAAAAAMAAUAAAAQAA4AAAAHAAAAAAARAAAAAAAMAAUAAAARAA4AAAAHAAAAAAASAAAAAAAMAAUAAAASAA4AAAAHAAAAAAATAAAAAAAMAAUAAAATAA4AAAAHAAAAAAAUAAAAAAAMAAUAAAAUAA4AAAAHAAAAAAAVAAAAAAAMAAUAAAAVAA4AAAAHAAAAAAAWAAAAAAAMAAUAAAAWAA4AAAAHAAAAAAAXAAAAAAAMAAUAAAAXAA4AAAAHAAAAAAAYAAAAAAAMAAUAAAAYAA4AAAAHAAAAAAAZAAAAAAAMAAUAAAAZAA4AAAAHAAAAAAAAAAEAAAAMAAUAAAAZAAEAAAAMAAUAAAAAAAIAAAAMAAUAAAAZAAIAAAAMAAUAAAAAAAMAAAAMAAUAAAAZAAMAAAAMAAUAAAAAAAQAAAAMAAUAAAAZAAQAAAAMAAUAAAAAAAUAAAAMAAUAAAAZAAUAAAAMAAUAAAAAAAYAAAAMAAUAAAAZAAYAAAAMAAUAAAAAAAcAAAAMAAUAAAAZAAcAAAAMAAUAAAAAAAgAAAAMAAUAAAAZAAgAAAAMAAUAAAAAAAkAAAAMAAUAAAAZAAkAAAAMAAUAAAAAAAoAAAAMAAUAAAAZAAoAAAAMAAUAAAAAAAsAAAAMAAUAAAAZAAsAAAAMAAUAAAAAAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAAAA0AAAAMAAUAAAAZAA0AAAAMAAUAAAABAAcAAAAHAAAAAAACAAcAAAAHAAAAAAADAAcAAAAHAAAAAAAEAAcAAAAHAAAAAAAFAAcAAAAHAAAAAAAGAAcAAAAHAAAAAAAHAAcAAAAHAAAAAAAIAAcAAAAHAAAAAAAJAAcAAAAHAAAAAAAJAAUAAAARAAkAAAAJAAYAAAARAAkAAAAIAAgAAAAMAAUAAAAIAAkAAAAMAAUAAAAIAAoAAAAMAAUAAAAIAAsAAAAMAAUAAAAIAAwAAAAMAAUAAAAIAA0AAAAMAAUAAAAPAAsAAAAHAAAAAAAQAAsAAAAHAAAAAAARAAsAAAAHAAAAAAAUAAgAAAAHAAAAAAAVAAgAAAAHAAAAAAAWAAgAAAAHAAAAAAAXAAgAAAAHAAAAAAAJAA0AAAAMAAUAAAAKAA0AAAAMAAUAAAALAA0AAAAHAAAAAAAJAAwAAAAMAAUAAAAKAAwAAAAHAAAAAAAJAAsAAAAHAAAAAAA=")
 tile_set = SubResource("TileSet_v8kj3")
 
 [node name="LevelHeaderLabel" type="Label" parent="." unique_id=1388462118]
@@ -512,270 +499,13 @@ offset_left = 64.0
 offset_top = 8.0
 offset_right = 1216.0
 offset_bottom = 40.0
-theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(0.06, 0.84, 0.64, 1)
 theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 0.95)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
 text = "LEVEL 1 — PLAYER vs ChatGPT"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Ramps" type="Node2D" parent="." unique_id=2032566747]
-
-[node name="BankRamp" type="StaticBody2D" parent="Ramps" unique_id=1853129616 groups=["walls"]]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/BankRamp" unique_id=187836166]
-polygon = PackedVector2Array(448, 496, 672, 672, 448, 672)
-
-[node name="VisualPolygon" type="Polygon2D" parent="Ramps/BankRamp" unique_id=1710152891]
-color = Color(0.07, 0.24, 0.2, 1)
-polygon = PackedVector2Array(448, 496, 672, 672, 448, 672)
-
-[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/BankRamp" unique_id=983268659]
-points = PackedVector2Array(448, 496, 672, 672)
-width = 4.5
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="RampHint" type="Label" parent="Ramps/BankRamp" unique_id=1828247577]
-offset_left = 456.0
-offset_top = 636.0
-offset_right = 456.0
-offset_bottom = 636.0
-theme_override_font_sizes/font_size = 11
-theme_override_colors/font_color = Color(0.06, 0.84, 0.64, 1)
-text = "BANK RAMP"
-
-[node name="Enemies" type="Node2D" parent="." unique_id=1138665174]
-
-[node name="Boss_ChatGPT" type="CharacterBody2D" parent="Enemies" unique_id=842343520 groups=["boss", "enemies"]]
-position = Vector2(240, 290)
-collision_layer = 4
-script = ExtResource("2_ootpb")
-enemy_name = "BOSS: ChatGPT-4o"
-is_boss = true
-max_hp = 250
-hp = 250
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_ChatGPT" unique_id=1601313516]
-shape = SubResource("RectangleShape2D_crycw")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Boss_ChatGPT" unique_id=1018730444]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Boss_ChatGPT" unique_id=2060529800]
-points = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236, 31.411903, 13.011236)
-width = 3.5
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotOuter" type="Line2D" parent="Enemies/Boss_ChatGPT" unique_id=479209952]
-points = PackedVector2Array(22, 0, 11, 19.052559, -11, 19.052559, -22, 2.694134e-15, -11, -19.052559, 11, -19.052559, 22, 0)
-width = 2.8
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotCore" type="Polygon2D" parent="Enemies/Boss_ChatGPT" unique_id=240520575]
-color = Color(0.55, 1, 0.88, 1)
-polygon = PackedVector2Array(8.573651, 4.95, 6.0618013e-16, 9.9, -8.573651, 4.95, -8.573651, -4.95, -1.8185404e-15, -9.9, 8.573651, -4.95)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Boss_ChatGPT" unique_id=94914123]
-offset_left = -44.0
-offset_top = -49.0
-offset_right = 44.0
-offset_bottom = -39.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Boss_ChatGPT" unique_id=1246616051]
-offset_left = -43.0
-offset_top = -48.0
-offset_right = 43.0
-offset_bottom = -40.0
-mouse_filter = 2
-color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Boss_ChatGPT" unique_id=382102863]
-offset_left = -95.0
-offset_top = -70.0
-offset_right = 95.0
-offset_bottom = -47.0
-theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(0.55, 1, 0.88, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "BOSS: ChatGPT-4o (250 HP)"
-horizontal_alignment = 1
-
-[node name="Underling_GPTMini_1" type="CharacterBody2D" parent="Enemies" unique_id=253876860 groups=["enemies", "underlings"]]
-position = Vector2(380, 306)
-collision_layer = 4
-script = ExtResource("2_ootpb")
-enemy_name = "GPT-4o Mini"
-max_hp = 45
-hp = 45
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GPTMini_1" unique_id=933966064]
-shape = SubResource("RectangleShape2D_i2041")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GPTMini_1" unique_id=869825156]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GPTMini_1" unique_id=422903405]
-points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
-width = 2.2
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotOuter" type="Line2D" parent="Enemies/Underling_GPTMini_1" unique_id=703957853]
-points = PackedVector2Array(10, 0, 5, 8.660254, -5, 8.660254, -10, 1.2246064e-15, -5, -8.660254, 5, -8.660254, 10, 0)
-width = 1.8
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotCore" type="Polygon2D" parent="Enemies/Underling_GPTMini_1" unique_id=517041154]
-color = Color(0.55, 1, 0.88, 1)
-polygon = PackedVector2Array(3.8971143, 2.25, 2.7553643e-16, 4.5, -3.8971143, 2.25, -3.8971143, -2.25, -8.266093e-16, -4.5, 3.8971143, -2.25)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GPTMini_1" unique_id=656346719]
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 23.0
-offset_bottom = -25.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GPTMini_1" unique_id=981493823]
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 22.0
-offset_bottom = -26.0
-mouse_filter = 2
-color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Underling_GPTMini_1" unique_id=1897394619]
-offset_left = -95.0
-offset_top = -53.0
-offset_right = 95.0
-offset_bottom = -30.0
-theme_override_font_sizes/font_size = 10
-theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "GPT-4o Mini (45 HP)"
-horizontal_alignment = 1
-
-[node name="Underling_GPTMini_2" type="CharacterBody2D" parent="Enemies" unique_id=902904472 groups=["enemies", "underlings"]]
-position = Vector2(808, 498)
-collision_layer = 4
-script = ExtResource("2_ootpb")
-enemy_name = "Prompt Token"
-max_hp = 45
-hp = 45
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GPTMini_2" unique_id=841414746]
-shape = SubResource("RectangleShape2D_xy4tn")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GPTMini_2" unique_id=398227966]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GPTMini_2" unique_id=508986212]
-points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
-width = 2.2
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotOuter" type="Line2D" parent="Enemies/Underling_GPTMini_2" unique_id=364095569]
-points = PackedVector2Array(10, 0, 5, 8.660254, -5, 8.660254, -10, 1.2246064e-15, -5, -8.660254, 5, -8.660254, 10, 0)
-width = 1.8
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotCore" type="Polygon2D" parent="Enemies/Underling_GPTMini_2" unique_id=639588360]
-color = Color(0.55, 1, 0.88, 1)
-polygon = PackedVector2Array(3.8971143, 2.25, 2.7553643e-16, 4.5, -3.8971143, 2.25, -3.8971143, -2.25, -8.266093e-16, -4.5, 3.8971143, -2.25)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GPTMini_2" unique_id=1696453093]
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 23.0
-offset_bottom = -25.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GPTMini_2" unique_id=1784797597]
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 22.0
-offset_bottom = -26.0
-mouse_filter = 2
-color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Underling_GPTMini_2" unique_id=299848995]
-offset_left = -95.0
-offset_top = -53.0
-offset_right = 95.0
-offset_bottom = -30.0
-theme_override_font_sizes/font_size = 10
-theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "Prompt Token (45 HP)"
-horizontal_alignment = 1
-
-[node name="Underling_GPTMini_3" type="CharacterBody2D" parent="Enemies" unique_id=406631132 groups=["enemies", "underlings"]]
-position = Vector2(1072, 354)
-collision_layer = 4
-script = ExtResource("2_ootpb")
-enemy_name = "RLHF Drone"
-max_hp = 45
-hp = 45
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GPTMini_3" unique_id=566492333]
-shape = SubResource("RectangleShape2D_usj0q")
-
-[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GPTMini_3" unique_id=1378534011]
-color = Color(0.09, 0.11, 0.16, 0.96)
-polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
-
-[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GPTMini_3" unique_id=17401404]
-points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
-width = 2.2
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotOuter" type="Line2D" parent="Enemies/Underling_GPTMini_3" unique_id=2105073689]
-points = PackedVector2Array(10, 0, 5, 8.660254, -5, 8.660254, -10, 1.2246064e-15, -5, -8.660254, 5, -8.660254, 10, 0)
-width = 1.8
-default_color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="KnotCore" type="Polygon2D" parent="Enemies/Underling_GPTMini_3" unique_id=1556553136]
-color = Color(0.55, 1, 0.88, 1)
-polygon = PackedVector2Array(3.8971143, 2.25, 2.7553643e-16, 4.5, -3.8971143, 2.25, -3.8971143, -2.25, -8.266093e-16, -4.5, 3.8971143, -2.25)
-
-[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GPTMini_3" unique_id=1624997750]
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 23.0
-offset_bottom = -25.0
-mouse_filter = 2
-color = Color(0.03, 0.03, 0.05, 0.95)
-
-[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GPTMini_3" unique_id=359741437]
-offset_left = -22.0
-offset_top = -31.0
-offset_right = 22.0
-offset_bottom = -26.0
-mouse_filter = 2
-color = Color(0.06, 0.84, 0.64, 1)
-
-[node name="TitleLabel" type="Label" parent="Enemies/Underling_GPTMini_3" unique_id=563244398]
-offset_left = -95.0
-offset_top = -53.0
-offset_right = 95.0
-offset_bottom = -30.0
-theme_override_font_sizes/font_size = 10
-theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
-theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
-theme_override_constants/outline_size = 3
-text = "RLHF Drone (45 HP)"
-horizontal_alignment = 1
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1438204597]
 position = Vector2(1020, 636)
@@ -790,8 +520,8 @@ offset_left = -50.0
 offset_top = 14.0
 offset_right = 50.0
 offset_bottom = 37.0
-theme_override_font_sizes/font_size = 10
 theme_override_colors/font_color = Color(0.75, 0.95, 1, 0.85)
+theme_override_font_sizes/font_size = 10
 text = "START"
 horizontal_alignment = 1
 
@@ -815,9 +545,9 @@ offset_left = -50.0
 offset_top = -52.0
 offset_right = 50.0
 offset_bottom = -29.0
-theme_override_font_sizes/font_size = 11
 theme_override_colors/font_color = Color(0.06, 0.84, 0.64, 1)
 theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.05, 1)
 theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
 text = "GOAL"
 horizontal_alignment = 1
