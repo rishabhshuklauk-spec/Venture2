@@ -28,25 +28,31 @@ var _hp_label: Label
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_build_hud()
 	_music_player = AudioStreamPlayer.new()
 	_music_player.name = "MusicPlayer"
+	_music_player.process_mode = Node.PROCESS_MODE_PAUSABLE
 	_music_player.volume_db = -8.0
 	_music_player.finished.connect(_on_music_finished)
 	add_child(_music_player)
 
 	if _player != null:
+		_player.process_mode = Node.PROCESS_MODE_PAUSABLE
 		_player.hp_changed.connect(_on_player_hp_changed)
 		_player.player_died.connect(_on_player_died)
 
 	_current_level_node = get_node_or_null("Level1") as Node2D
+	if _current_level_node != null:
+		_current_level_node.process_mode = Node.PROCESS_MODE_PAUSABLE
 	_bind_current_level(1, true)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.physical_keycode == KEY_R and not _game_over and not _won_game:
-			_load_level(current_level_index, true)
+		if event.physical_keycode == KEY_R or event.keycode == KEY_R:
+			get_tree().paused = false
+			_load_level(1, true)
 
 
 func _load_level(level_idx: int, reset_hp: bool = false) -> void:
@@ -65,6 +71,7 @@ func _load_level(level_idx: int, reset_hp: bool = false) -> void:
 
 	var next_level := packed.instantiate() as Node2D
 	next_level.name = "Level%d" % level_idx
+	next_level.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(next_level)
 	move_child(next_level, 0)
 	_current_level_node = next_level
