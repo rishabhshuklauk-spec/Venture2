@@ -65,11 +65,12 @@ func _physics_process(delta: float) -> void:
 	queue_redraw()
 
 
-func reset_for_level(spawn_pos: Vector2) -> void:
+func reset_for_level(spawn_pos: Vector2, reset_hp: bool = false) -> void:
 	recall_active_orb()
 	global_position = spawn_pos
 	velocity = Vector2.ZERO
-	hp = MAX_HP
+	if reset_hp or hp <= 0:
+		hp = MAX_HP
 	invuln_timer = 0.0
 	_hit_anim_timer = 0.0
 	_is_dead = false

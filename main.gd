@@ -40,16 +40,16 @@ func _ready() -> void:
 		_player.player_died.connect(_on_player_died)
 
 	_current_level_node = get_node_or_null("Level1") as Node2D
-	_bind_current_level(1)
+	_bind_current_level(1, true)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.physical_keycode == KEY_R and not _won_game:
-			_load_level(current_level_index)
+			_load_level(current_level_index, true)
 
 
-func _load_level(level_idx: int) -> void:
+func _load_level(level_idx: int, reset_hp: bool = false) -> void:
 	if level_idx < 1 or level_idx > LEVEL_PATHS.size():
 		return
 
@@ -68,10 +68,10 @@ func _load_level(level_idx: int) -> void:
 	add_child(next_level)
 	move_child(next_level, 0)
 	_current_level_node = next_level
-	_bind_current_level(level_idx)
+	_bind_current_level(level_idx, reset_hp)
 
 
-func _bind_current_level(level_idx: int) -> void:
+func _bind_current_level(level_idx: int, reset_hp: bool = false) -> void:
 	current_level_index = level_idx
 	_level_cleared = false
 	_game_over = false
@@ -83,7 +83,7 @@ func _bind_current_level(level_idx: int) -> void:
 	var spawn := _current_level_node.get_node_or_null("PlayerSpawn") as Node2D
 	var spawn_pos := spawn.global_position if spawn != null else Vector2(1020, 636)
 	if _player != null:
-		_player.reset_for_level(spawn_pos)
+		_player.reset_for_level(spawn_pos, reset_hp)
 
 	var enemies_container := _current_level_node.get_node_or_null("Enemies")
 	_remaining_enemies = 0
@@ -122,7 +122,7 @@ func _on_enemy_died(_enemy: Node2D) -> void:
 		if current_level_index < LEVEL_PATHS.size():
 			_play_sfx("res://assets/Sounds/Level completed.wav", -1.0)
 			_play_sfx("res://assets/Sounds/NewLevel.wav", -1.0)
-			call_deferred("_load_level", current_level_index + 1)
+			call_deferred("_load_level", current_level_index + 1, false)
 		else:
 			_play_sfx("res://assets/Sounds/Level completed.wav", -1.0)
 			_game_over = true
@@ -148,7 +148,7 @@ func _on_player_died() -> void:
 	if _game_over:
 		return
 	_game_over = true
-	call_deferred("_load_level", current_level_index)
+	call_deferred("_load_level", current_level_index, true)
 
 
 func _play_sfx(path: String, volume_db: float = 0.0) -> void:
