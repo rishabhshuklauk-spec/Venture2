@@ -94,7 +94,6 @@ atlas = ExtResource("3_run")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_run_3"]
-atlas = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_run_4"]
 atlas = ExtResource("3_run")
@@ -152,9 +151,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hit_6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hit",
-"speed": 18.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -190,17 +189,17 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nr8wp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
-"speed": 12.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jump_0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -239,9 +238,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_run_11")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
-"speed": 16.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
@@ -249,14 +248,13 @@ size = Vector2(36, 56)
 
 [node name="Player" type="CharacterBody2D" unique_id=30529122]
 collision_layer = 2
-collision_mask = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752654922]
 texture_filter = 1
 position = Vector2(0, -4)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_fgumf")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890211022]
