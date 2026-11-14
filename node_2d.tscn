@@ -92,7 +92,9 @@ scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752654922]
 texture_filter = 1
+position = Vector2(102.00002, 70)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fgumf")
 animation = &"idle"
-frame_progress = 0.68440205
+autoplay = "idle"
+frame_progress = 0.4725356
