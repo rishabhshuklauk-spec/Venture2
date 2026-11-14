@@ -45,7 +45,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.physical_keycode == KEY_R and not _won_game:
+		if event.physical_keycode == KEY_R and not _game_over and not _won_game:
 			_load_level(current_level_index, true)
 
 
@@ -148,7 +148,12 @@ func _on_player_died() -> void:
 	if _game_over:
 		return
 	_game_over = true
-	call_deferred("_load_level", current_level_index, true)
+	_music_player.stop()
+	if _player != null:
+		_player.recall_active_orb()
+		_player.set_physics_process(false)
+		_player.set_process_unhandled_input(false)
+	get_tree().paused = true
 
 
 func _play_sfx(path: String, volume_db: float = 0.0) -> void:

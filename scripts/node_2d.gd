@@ -194,6 +194,7 @@ func _play_sfx(path: String, volume_db: float = 0.0) -> void:
 	if stream is AudioStreamMP3:
 		(stream as AudioStreamMP3).loop = false
 	var sfx := AudioStreamPlayer.new()
+	sfx.process_mode = Node.PROCESS_MODE_ALWAYS
 	sfx.stream = stream
 	sfx.volume_db = volume_db
 	var host: Node = self
