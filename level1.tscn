@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bcsstcfxjnue" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_jwv3a"]
 [ext_resource type="Texture2D" uid="uid://dvmw6nwkall46" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="2_dopym"]
+[ext_resource type="Script" uid="uid://75dsxr8sqawp" path="res://scripts/enemy_1.gd" id="3_v8kj3"]
+[ext_resource type="Texture2D" uid="uid://c1568hmo0ikkk" path="res://assets/images/baddies/GPT.png" id="3_v38iq"]
+[ext_resource type="Texture2D" uid="uid://brtvqfbj4i25v" path="res://assets/images/baddies/GPT_MINI.png" id="4_v8kj3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_jwv3a")
@@ -385,12 +388,23 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="LevelRoot" type="Node2D" unique_id=538338397]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crycw"]
+size = Vector2(68, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2041"]
+size = Vector2(36, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4tn"]
+size = Vector2(36, 54)
+
+[node name="LevelRoot2" type="Node2D" unique_id=538338397]
 
 [node name="ArenaBackground" type="ColorRect" parent="." unique_id=1863739141]
 z_index = -20
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -18.0
+offset_top = -29.0
+offset_right = 1262.0
+offset_bottom = 691.0
 mouse_filter = 2
 color = Color(0.04, 0.1, 0.09, 1)
 
@@ -551,3 +565,54 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 11
 text = "GOAL"
 horizontal_alignment = 1
+
+[node name="Enemies" type="Node2D" parent="." unique_id=727853332]
+
+[node name="Boss_GPT" type="CharacterBody2D" parent="Enemies" unique_id=1894584326 groups=["enemies"]]
+position = Vector2(240, 260)
+collision_layer = 4
+script = ExtResource("3_v8kj3")
+enemy_name = "ChatGPT"
+is_boss = true
+max_hp = 150
+speed = 55.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Boss_GPT" unique_id=1207324082]
+texture_filter = 1
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("3_v38iq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_GPT" unique_id=65403507]
+shape = SubResource("RectangleShape2D_crycw")
+
+[node name="Mini_GPT_1" type="CharacterBody2D" parent="Enemies" unique_id=1505685839 groups=["enemies"]]
+position = Vector2(380, 290)
+collision_layer = 4
+script = ExtResource("3_v8kj3")
+enemy_name = "GPT Mini"
+max_hp = 50
+speed = 70.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_GPT_1" unique_id=1584492712]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_v8kj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_GPT_1" unique_id=964990201]
+shape = SubResource("RectangleShape2D_i2041")
+
+[node name="Mini_GPT_2" type="CharacterBody2D" parent="Enemies" unique_id=1418719031 groups=["enemies"]]
+position = Vector2(808, 480)
+collision_layer = 4
+script = ExtResource("3_v8kj3")
+enemy_name = "GPT Mini"
+max_hp = 50
+speed = 70.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_GPT_2" unique_id=1108074492]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_v8kj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_GPT_2" unique_id=1053172184]
+shape = SubResource("RectangleShape2D_xy4tn")

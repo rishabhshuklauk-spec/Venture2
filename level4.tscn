@@ -1,7 +1,10 @@
 [gd_scene format=4]
 
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_t4tfv"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/GPT.png" id="3_g1tnb"]
+[ext_resource type="Script" path="res://scripts/enemy_1.gd" id="3_pklw6"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_qmr0j"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/GPT_MINI.png" id="4_pklw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_t4tfv")
@@ -385,6 +388,15 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp1i4"]
+size = Vector2(68, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvvno"]
+size = Vector2(36, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4lsh"]
+size = Vector2(36, 54)
+
 [node name="LevelRoot" type="Node2D" unique_id=1305050071]
 
 [node name="ArenaBackground" type="ColorRect" parent="." unique_id=1482320627]
@@ -561,3 +573,58 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 11
 text = "GOAL"
 horizontal_alignment = 1
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1009968310]
+
+[node name="Boss_Grok" type="CharacterBody2D" parent="Enemies" unique_id=1461136735 groups=["enemies"]]
+position = Vector2(640, 260)
+collision_layer = 4
+script = ExtResource("3_pklw6")
+enemy_name = "Grok"
+is_boss = true
+max_hp = 180
+speed = 55.0
+auto_texture_path = "res://assets/images/baddies/GROK.png"
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Boss_Grok" unique_id=2146808977]
+modulate = Color(1, 0.35, 0.4, 1)
+texture_filter = 1
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("3_g1tnb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_Grok" unique_id=1025194619]
+shape = SubResource("RectangleShape2D_bp1i4")
+
+[node name="Mini_Grok_1" type="CharacterBody2D" parent="Enemies" unique_id=1972573508 groups=["enemies"]]
+position = Vector2(256, 430)
+collision_layer = 4
+script = ExtResource("3_pklw6")
+enemy_name = "Grok Mini"
+speed = 70.0
+auto_texture_path = "res://assets/images/baddies/GROK_MINI.png"
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Grok_1" unique_id=1255469309]
+modulate = Color(1, 0.35, 0.4, 1)
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_pklw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Grok_1" unique_id=431816389]
+shape = SubResource("RectangleShape2D_bvvno")
+
+[node name="Mini_Grok_2" type="CharacterBody2D" parent="Enemies" unique_id=1679073745 groups=["enemies"]]
+position = Vector2(1024, 430)
+collision_layer = 4
+script = ExtResource("3_pklw6")
+enemy_name = "Grok Mini"
+speed = 70.0
+auto_texture_path = "res://assets/images/baddies/GROK_MINI.png"
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Grok_2" unique_id=145277250]
+modulate = Color(1, 0.35, 0.4, 1)
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_pklw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Grok_2" unique_id=1278473631]
+shape = SubResource("RectangleShape2D_b4lsh")

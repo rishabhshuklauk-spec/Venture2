@@ -1,7 +1,10 @@
 [gd_scene format=4]
 
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_6q4t8"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/GEMINI.png" id="3_8tcn8"]
+[ext_resource type="Script" path="res://scripts/enemy_1.gd" id="3_21xmu"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_r6vdu"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/GEMINI_MINI.png" id="4_r6vdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_6q4t8")
@@ -385,6 +388,15 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i3m3"]
+size = Vector2(68, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmy57"]
+size = Vector2(36, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qulpo"]
+size = Vector2(36, 54)
+
 [node name="LevelRoot" type="Node2D" unique_id=1917590206]
 
 [node name="ArenaBackground" type="ColorRect" parent="." unique_id=2105598111]
@@ -557,3 +569,54 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 11
 text = "GOAL"
 horizontal_alignment = 1
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1892372673]
+
+[node name="Boss_Gemini" type="CharacterBody2D" parent="Enemies" unique_id=1154776558 groups=["enemies"]]
+position = Vector2(640, 210)
+collision_layer = 4
+script = ExtResource("3_21xmu")
+enemy_name = "Gemini"
+is_boss = true
+max_hp = 150
+speed = 55.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Boss_Gemini" unique_id=1776677472]
+texture_filter = 1
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("3_8tcn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_Gemini" unique_id=2100617243]
+shape = SubResource("RectangleShape2D_8i3m3")
+
+[node name="Mini_Gemini_1" type="CharacterBody2D" parent="Enemies" unique_id=1246779421 groups=["enemies"]]
+position = Vector2(256, 430)
+collision_layer = 4
+script = ExtResource("3_21xmu")
+enemy_name = "Gemini Mini"
+max_hp = 50
+speed = 70.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Gemini_1" unique_id=1121338002]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_r6vdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Gemini_1" unique_id=591156541]
+shape = SubResource("RectangleShape2D_rmy57")
+
+[node name="Mini_Gemini_2" type="CharacterBody2D" parent="Enemies" unique_id=35685101 groups=["enemies"]]
+position = Vector2(1024, 430)
+collision_layer = 4
+script = ExtResource("3_21xmu")
+enemy_name = "Gemini Mini"
+max_hp = 50
+speed = 70.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Gemini_2" unique_id=2135118520]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_r6vdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Gemini_2" unique_id=20681140]
+shape = SubResource("RectangleShape2D_qulpo")

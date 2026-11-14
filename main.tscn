@@ -1,34 +1,15 @@
 [gd_scene format=3 uid="uid://bu0id1o2hm43o"]
 
-[ext_resource type="Script" uid="uid://dsqtjtunkevs5" path="res://main.gd" id="1_main"]
+[ext_resource type="Script" path="res://main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://level1.tscn" id="2_level1"]
 [ext_resource type="PackedScene" uid="uid://dygidsxycg4st" path="res://node_2d.tscn" id="3_player"]
-[ext_resource type="Texture2D" uid="uid://n7g1ucolt1l" path="res://icon.svg" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://cjxjvleb63a5f" path="res://scripts/node_2d.gd" id="4_lquwl"]
-[ext_resource type="Script" uid="uid://75dsxr8sqawp" path="res://scripts/enemy_1.gd" id="5_7mycd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxxmx"]
-size = Vector2(122, 125)
+[ext_resource type="Script" path="res://scripts/node_2d.gd" id="4_player_script"]
 
 [node name="Main" type="Node2D" unique_id=1750456492]
 script = ExtResource("1_main")
 
 [node name="Level1" parent="." unique_id=864923748 instance=ExtResource("2_level1")]
-position = Vector2(2, 9)
 
 [node name="Player" parent="." unique_id=30529122 instance=ExtResource("3_player")]
-position = Vector2(788, 443)
-script = ExtResource("4_lquwl")
-
-[node name="Enemy1" type="CharacterBody2D" parent="." unique_id=327859528]
-position = Vector2(1063, 321)
-script = ExtResource("5_7mycd")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy1" unique_id=1685649953]
-position = Vector2(1, 4)
-texture = ExtResource("4_1bvp3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy1" unique_id=1369089450]
-position = Vector2(2, 5.5)
-shape = SubResource("RectangleShape2D_mxxmx")
+position = Vector2(1020, 636)
+script = ExtResource("4_player_script")

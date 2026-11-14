@@ -1,7 +1,9 @@
 [gd_scene format=4]
 
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_gmhuy"]
+[ext_resource type="Script" path="res://scripts/enemy_1.gd" id="3_5lcx6"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_pklw6"]
+[ext_resource type="Texture2D" path="res://assets/images/baddies/CLAUDE.png" id="3_qrujo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_gmhuy")
@@ -385,6 +387,15 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_an40m"]
+size = Vector2(68, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu84n"]
+size = Vector2(36, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmsap"]
+size = Vector2(36, 54)
+
 [node name="LevelRoot" type="Node2D" unique_id=522820007]
 
 [node name="ArenaBackground" type="ColorRect" parent="." unique_id=439557206]
@@ -591,3 +602,56 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 11
 text = "GOAL"
 horizontal_alignment = 1
+
+[node name="Enemies" type="Node2D" parent="." unique_id=2004746115]
+
+[node name="Boss_Claude" type="CharacterBody2D" parent="Enemies" unique_id=1416308988 groups=["enemies"]]
+position = Vector2(1020, 260)
+collision_layer = 4
+script = ExtResource("3_5lcx6")
+enemy_name = "Claude"
+is_boss = true
+max_hp = 150
+speed = 55.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Boss_Claude" unique_id=1482469170]
+texture_filter = 1
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("3_qrujo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_Claude" unique_id=1621881055]
+shape = SubResource("RectangleShape2D_an40m")
+
+[node name="Mini_Claude_1" type="CharacterBody2D" parent="Enemies" unique_id=1663469756 groups=["enemies"]]
+position = Vector2(304, 330)
+collision_layer = 4
+script = ExtResource("3_5lcx6")
+enemy_name = "Claude Mini"
+max_hp = 50
+speed = 70.0
+auto_texture_path = "res://assets/images/baddies/CLAUDE_MINI.png"
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Claude_1" unique_id=26262737]
+texture_filter = 1
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_qrujo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Claude_1" unique_id=41902178]
+shape = SubResource("RectangleShape2D_mu84n")
+
+[node name="Mini_Claude_2" type="CharacterBody2D" parent="Enemies" unique_id=1212967009 groups=["enemies"]]
+position = Vector2(544, 480)
+collision_layer = 4
+script = ExtResource("3_5lcx6")
+enemy_name = "Claude Mini"
+max_hp = 50
+speed = 70.0
+auto_texture_path = "res://assets/images/baddies/CLAUDE_MINI.png"
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Mini_Claude_2" unique_id=613672778]
+texture_filter = 1
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_qrujo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Mini_Claude_2" unique_id=1826445765]
+shape = SubResource("RectangleShape2D_bmsap")
