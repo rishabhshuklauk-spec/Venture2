@@ -87,7 +87,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=497202701]
+[node name="Player" type="CharacterBody2D" unique_id=30529122]
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752654922]
@@ -95,4 +95,4 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fgumf")
 animation = &"idle"
-frame_progress = 0.10347859
+frame_progress = 0.68440205
