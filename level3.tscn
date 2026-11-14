@@ -1,0 +1,920 @@
+[gd_scene format=4]
+
+[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_qrujo"]
+[ext_resource type="Script" path="res://enemy.gd" id="2_5lcx6"]
+[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="3_an40m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
+texture = ExtResource("1_qrujo")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:0/0 = 0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:0/0 = 0
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:0/0 = 0
+17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:0/0 = 0
+18:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:0/0 = 0
+19:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:1/0 = 0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:1/0 = 0
+15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:1/0 = 0
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:1/0 = 0
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:1/0 = 0
+19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:2/0 = 0
+14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:2/0 = 0
+15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:2/0 = 0
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:2/0 = 0
+18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:2/0 = 0
+19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:4/0 = 0
+14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:4/0 = 0
+15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:4/0 = 0
+17:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:4/0 = 0
+18:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:4/0 = 0
+19:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:4/0 = 0
+20:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:4/0 = 0
+21:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:5/0 = 0
+10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:5/0 = 0
+12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:5/0 = 0
+13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:5/0 = 0
+14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:5/0 = 0
+15:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:5/0 = 0
+17:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:5/0 = 0
+18:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:5/0 = 0
+19:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:5/0 = 0
+20:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:5/0 = 0
+21:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:6/0 = 0
+13:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:6/0 = 0
+14:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:6/0 = 0
+15:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:6/0 = 0
+17:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:6/0 = 0
+18:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:6/0 = 0
+19:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:8/0 = 0
+9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:8/0 = 0
+12:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:8/0 = 0
+13:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:8/0 = 0
+14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:8/0 = 0
+15:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:8/0 = 0
+17:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:8/0 = 0
+18:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:8/0 = 0
+19:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:8/0 = 0
+20:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:9/0 = 0
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:9/0 = 0
+1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:9/0 = 0
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:9/0 = 0
+3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:9/0 = 0
+4:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:9/0 = 0
+6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:9/0 = 0
+7:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:9/0 = 0
+10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:9/0 = 0
+12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:9/0 = 0
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:9/0 = 0
+15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:9/0 = 0
+17:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:9/0 = 0
+18:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:9/0 = 0
+19:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:9/0 = 0
+20:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:10/0 = 0
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:10/0 = 0
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:10/0 = 0
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:10/0 = 0
+7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:10/0 = 0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:10/0 = 0
+13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:10/0 = 0
+14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:10/0 = 0
+15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:10/0 = 0
+18:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:10/0 = 0
+19:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:10/0 = 0
+20:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_v8kj3"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_v38iq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu84n"]
+size = Vector2(68, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmsap"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqrji"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8x87a"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci4mn"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sotx7"]
+size = Vector2(44, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx85b"]
+atlas = ExtResource("3_an40m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx44q"]
+atlas = ExtResource("3_an40m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8vhr"]
+atlas = ExtResource("3_an40m")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqrsh"]
+atlas = ExtResource("3_an40m")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l65w"]
+atlas = ExtResource("3_an40m")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjtee"]
+atlas = ExtResource("3_an40m")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1idop"]
+atlas = ExtResource("3_an40m")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beq0j"]
+atlas = ExtResource("3_an40m")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
+atlas = ExtResource("3_an40m")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
+atlas = ExtResource("3_an40m")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5gc3"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx85b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx44q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqrsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l65w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjtee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1idop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beq0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nauge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycv2e")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="LevelRoot" type="Node2D" unique_id=1809789583]
+
+[node name="ArenaBackground" type="ColorRect" parent="." unique_id=924226355]
+z_index = -20
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.03, 0.07, 0.14, 1)
+
+[node name="ThemeDecor" type="Node2D" parent="." unique_id=794890170]
+z_index = -10
+
+[node name="GridV_112" type="Line2D" parent="ThemeDecor" unique_id=550883793]
+points = PackedVector2Array(112, 48, 112, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_208" type="Line2D" parent="ThemeDecor" unique_id=980000087]
+points = PackedVector2Array(208, 48, 208, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_304" type="Line2D" parent="ThemeDecor" unique_id=229152617]
+points = PackedVector2Array(304, 48, 304, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_400" type="Line2D" parent="ThemeDecor" unique_id=797455961]
+points = PackedVector2Array(400, 48, 400, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_496" type="Line2D" parent="ThemeDecor" unique_id=24521874]
+points = PackedVector2Array(496, 48, 496, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_592" type="Line2D" parent="ThemeDecor" unique_id=1299636090]
+points = PackedVector2Array(592, 48, 592, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_688" type="Line2D" parent="ThemeDecor" unique_id=138024230]
+points = PackedVector2Array(688, 48, 688, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_784" type="Line2D" parent="ThemeDecor" unique_id=1324408945]
+points = PackedVector2Array(784, 48, 784, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_880" type="Line2D" parent="ThemeDecor" unique_id=1531674563]
+points = PackedVector2Array(880, 48, 880, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_976" type="Line2D" parent="ThemeDecor" unique_id=874586119]
+points = PackedVector2Array(976, 48, 976, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_1072" type="Line2D" parent="ThemeDecor" unique_id=304605950]
+points = PackedVector2Array(1072, 48, 1072, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridV_1168" type="Line2D" parent="ThemeDecor" unique_id=458205972]
+points = PackedVector2Array(1168, 48, 1168, 672)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridH_96" type="Line2D" parent="ThemeDecor" unique_id=1647964321]
+points = PackedVector2Array(64, 96, 1216, 96)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridH_192" type="Line2D" parent="ThemeDecor" unique_id=502438772]
+points = PackedVector2Array(64, 192, 1216, 192)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridH_288" type="Line2D" parent="ThemeDecor" unique_id=267018382]
+points = PackedVector2Array(64, 288, 1216, 288)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridH_384" type="Line2D" parent="ThemeDecor" unique_id=1928055150]
+points = PackedVector2Array(64, 384, 1216, 384)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridH_480" type="Line2D" parent="ThemeDecor" unique_id=1539863463]
+points = PackedVector2Array(64, 480, 1216, 480)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="GridH_576" type="Line2D" parent="ThemeDecor" unique_id=614606892]
+points = PackedVector2Array(64, 576, 1216, 576)
+width = 1.0
+default_color = Color(0, 0.92, 1, 0.08)
+
+[node name="SonarRing_120" type="Line2D" parent="ThemeDecor" unique_id=1591334242]
+position = Vector2(260, 560)
+points = PackedVector2Array(120, 0, 115.911095, 31.058285, 103.92305, 60, 84.85281, 84.85281, 60, 103.92305, 31.058285, 115.911095, 7.347638e-15, 120, -31.058285, 115.911095, -60, 103.92305, -84.85281, 84.85281, -103.92305, 60, -115.911095, 31.058285, -120, 1.4695276e-14, -115.911095, -31.058285, -103.92305, -60, -84.85281, -84.85281, -60, -103.92305, -31.058285, -115.911095, -2.2042914e-14, -120, 31.058285, -115.911095, 60, -103.92305, 84.85281, -84.85281, 103.92305, -60, 115.911095, -31.058285, 120, 0)
+width = 1.5
+default_color = Color(0, 0.85, 1, 0.12)
+
+[node name="SonarRing_220" type="Line2D" parent="ThemeDecor" unique_id=1780959523]
+position = Vector2(260, 560)
+points = PackedVector2Array(220, 0, 212.50368, 56.94019, 190.52559, 110, 155.56349, 155.56349, 110, 190.52559, 56.94019, 212.50368, 1.347067e-14, 220, -56.94019, 212.50368, -110, 190.52559, -155.56349, 155.56349, -190.52559, 110, -212.50368, 56.94019, -220, 2.694134e-14, -212.50368, -56.94019, -190.52559, -110, -155.56349, -155.56349, -110, -190.52559, -56.94019, -212.50368, -4.041201e-14, -220, 56.94019, -212.50368, 110, -190.52559, 155.56349, -155.56349, 190.52559, -110, 212.50368, -56.94019, 220, 0)
+width = 1.5
+default_color = Color(0, 0.85, 1, 0.12)
+
+[node name="SonarRing_320" type="Line2D" parent="ThemeDecor" unique_id=547055819]
+position = Vector2(260, 560)
+points = PackedVector2Array(320, 0, 309.09625, 82.8221, 277.1281, 160, 226.27417, 226.27417, 160, 277.1281, 82.8221, 309.09625, 1.9593702e-14, 320, -82.8221, 309.09625, -160, 277.1281, -226.27417, 226.27417, -277.1281, 160, -309.09625, 82.8221, -320, 3.9187403e-14, -309.09625, -82.8221, -277.1281, -160, -226.27417, -226.27417, -160, -277.1281, -82.8221, -309.09625, -5.8781105e-14, -320, 82.8221, -309.09625, 160, -277.1281, 226.27417, -226.27417, 277.1281, -160, 309.09625, -82.8221, 320, 0)
+width = 1.5
+default_color = Color(0, 0.85, 1, 0.12)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=880419539]
+texture_filter = 1
+position = Vector2(16, 0)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAgAAAAAAA4AAAABAAgAAAABAAAAAAADAAgAAAABAA4AAAABAAgAAAACAAAAAAADAAgAAAACAA4AAAABAAgAAAADAAAAAAADAAgAAAADAA4AAAABAAgAAAAEAAAAAAADAAgAAAAEAA4AAAABAAgAAAAFAAAAAAADAAgAAAAFAA4AAAABAAgAAAAGAAAAAAADAAgAAAAGAA4AAAABAAgAAAAHAAAAAAADAAgAAAAHAA4AAAABAAgAAAAIAAAAAAADAAgAAAAIAA4AAAABAAgAAAAJAAAAAAADAAgAAAAJAA4AAAABAAgAAAAKAAAAAAADAAgAAAAKAA4AAAABAAgAAAALAAAAAAADAAgAAAALAA4AAAABAAgAAAAMAAAAAAADAAgAAAAMAA4AAAABAAgAAAANAAAAAAADAAgAAAANAA4AAAABAAgAAAAOAAAAAAADAAgAAAAOAA4AAAABAAgAAAAPAAAAAAADAAgAAAAPAA4AAAABAAgAAAAQAAAAAAADAAgAAAAQAA4AAAABAAgAAAARAAAAAAADAAgAAAARAA4AAAABAAgAAAASAAAAAAADAAgAAAASAA4AAAABAAgAAAATAAAAAAADAAgAAAATAA4AAAABAAgAAAAUAAAAAAADAAgAAAAUAA4AAAABAAgAAAAVAAAAAAADAAgAAAAVAA4AAAABAAgAAAAWAAAAAAADAAgAAAAWAA4AAAABAAgAAAAXAAAAAAADAAgAAAAXAA4AAAABAAgAAAAYAAAAAAADAAgAAAAYAA4AAAABAAgAAAAZAAAAAAADAAgAAAAZAA4AAAABAAgAAAAAAAEAAAADAAgAAAAZAAEAAAADAAgAAAAAAAIAAAADAAgAAAAZAAIAAAADAAgAAAAAAAMAAAADAAgAAAAZAAMAAAADAAgAAAAAAAQAAAADAAgAAAAZAAQAAAADAAgAAAAAAAUAAAADAAgAAAAZAAUAAAADAAgAAAAAAAYAAAADAAgAAAAZAAYAAAADAAgAAAAAAAcAAAADAAgAAAAZAAcAAAADAAgAAAAAAAgAAAADAAgAAAAZAAgAAAADAAgAAAAAAAkAAAADAAgAAAAZAAkAAAADAAgAAAAAAAoAAAADAAgAAAAZAAoAAAADAAgAAAAAAAsAAAADAAgAAAAZAAsAAAADAAgAAAAAAAwAAAADAAgAAAAZAAwAAAADAAgAAAAAAA0AAAADAAgAAAAZAA0AAAADAAgAAAABAAcAAAABAAgAAAACAAcAAAABAAgAAAADAAcAAAABAAgAAAAEAAcAAAABAAgAAAAFAAcAAAABAAgAAAAGAAcAAAABAAgAAAAHAAcAAAABAAgAAAAIAAcAAAABAAgAAAAJAAcAAAABAAgAAAAKAAcAAAABAAgAAAALAAcAAAABAAgAAAALAAgAAAADAAgAAAALAAkAAAADAAgAAAALAAoAAAADAAgAAAASAAUAAAAMAAUAAAATAAUAAAAMAAUAAAAUAAUAAAAMAAUAAAAVAAUAAAAMAAUAAAAWAAUAAAAMAAUAAAAXAAUAAAAMAAUAAAAOAAkAAAAMAAUAAAAPAAkAAAAMAAUAAAAQAAkAAAAMAAUAAAARAAkAAAAMAAUAAAAUAAsAAAABAAgAAAAVAAsAAAABAAgAAAAWAAsAAAABAAgAAAAXAAsAAAABAAgAAAA=")
+tile_set = SubResource("TileSet_v8kj3")
+
+[node name="LevelHeaderLabel" type="Label" parent="." unique_id=1914323308]
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 1216.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0, 0.92, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 0.95)
+theme_override_constants/outline_size = 4
+text = "LEVEL 3 — PLAYER vs DeepSeek"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ramps" type="Node2D" parent="." unique_id=1279015692]
+
+[node name="UpperSonarRamp" type="StaticBody2D" parent="Ramps" unique_id=772149911 groups=["walls"]]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/UpperSonarRamp" unique_id=156831138]
+polygon = PackedVector2Array(544, 48, 736, 48, 736, 192)
+
+[node name="VisualPolygon" type="Polygon2D" parent="Ramps/UpperSonarRamp" unique_id=299036092]
+color = Color(0.05, 0.22, 0.36, 1)
+polygon = PackedVector2Array(544, 48, 736, 48, 736, 192)
+
+[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/UpperSonarRamp" unique_id=1037263633]
+points = PackedVector2Array(544, 48, 736, 192)
+width = 4.5
+default_color = Color(0, 0.92, 1, 1)
+
+[node name="RampHint" type="Label" parent="Ramps/UpperSonarRamp" unique_id=384688696]
+offset_left = 630.0
+offset_top = 64.0
+offset_right = 630.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0, 0.92, 1, 1)
+text = "SONAR CEILING"
+
+[node name="LowerTrenchRamp" type="StaticBody2D" parent="Ramps" unique_id=1077539423 groups=["walls"]]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/LowerTrenchRamp" unique_id=1629877764]
+polygon = PackedVector2Array(640, 672, 832, 528, 832, 672)
+
+[node name="VisualPolygon" type="Polygon2D" parent="Ramps/LowerTrenchRamp" unique_id=1846053140]
+color = Color(0.05, 0.18, 0.34, 1)
+polygon = PackedVector2Array(640, 672, 832, 528, 832, 672)
+
+[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/LowerTrenchRamp" unique_id=1662466447]
+points = PackedVector2Array(640, 672, 832, 528)
+width = 4.5
+default_color = Color(0.1, 0.56, 1, 1)
+
+[node name="RampHint" type="Label" parent="Ramps/LowerTrenchRamp" unique_id=31875871]
+offset_left = 732.0
+offset_top = 638.0
+offset_right = 732.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.1, 0.56, 1, 1)
+text = "TRENCH RAMP"
+
+[node name="Enemies" type="Node2D" parent="." unique_id=524504619]
+
+[node name="Boss_DeepSeek" type="CharacterBody2D" parent="Enemies" unique_id=909804496 groups=["boss", "enemies"]]
+position = Vector2(260, 624)
+collision_layer = 4
+script = ExtResource("2_5lcx6")
+enemy_name = "BOSS: DeepSeek-R1"
+is_boss = true
+max_hp = 350
+hp = 350
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_DeepSeek" unique_id=350298448]
+shape = SubResource("RectangleShape2D_mu84n")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Boss_DeepSeek" unique_id=632057738]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Boss_DeepSeek" unique_id=674611651]
+points = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236, 31.411903, 13.011236)
+width = 3.5
+default_color = Color(0.1, 0.56, 1, 1)
+
+[node name="WhaleCrest" type="Polygon2D" parent="Enemies/Boss_DeepSeek" unique_id=1682918996]
+color = Color(0.1, 0.56, 1, 1)
+polygon = PackedVector2Array(-22, 5.5, -9.9, -16.5, 3.3, -4.4, 16.5, -18.7, 22, 5.5, 0, 15.4)
+
+[node name="SonarEye" type="Polygon2D" parent="Enemies/Boss_DeepSeek" unique_id=1184377805]
+color = Color(0, 0.92, 1, 1)
+polygon = PackedVector2Array(6.16, 0, 4.3557777, 4.3557777, 3.7717874e-16, 6.16, -4.3557777, 4.3557777, -6.16, 7.543575e-16, -4.3557777, -4.3557777, -1.1315363e-15, -6.16, 4.3557777, -4.3557777)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Boss_DeepSeek" unique_id=488437540]
+offset_left = -44.0
+offset_top = -49.0
+offset_right = 44.0
+offset_bottom = -39.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Boss_DeepSeek" unique_id=1747748265]
+offset_left = -43.0
+offset_top = -48.0
+offset_right = 43.0
+offset_bottom = -40.0
+mouse_filter = 2
+color = Color(0.1, 0.56, 1, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Boss_DeepSeek" unique_id=336974380]
+offset_left = -95.0
+offset_top = -70.0
+offset_right = 95.0
+offset_bottom = -47.0
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0, 0.92, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "BOSS: DeepSeek-R1 (350 HP)"
+horizontal_alignment = 1
+
+[node name="Underling_R1Zero" type="CharacterBody2D" parent="Enemies" unique_id=1838757637 groups=["enemies", "underlings"]]
+position = Vector2(300, 306)
+collision_layer = 4
+script = ExtResource("2_5lcx6")
+enemy_name = "R1-Zero Pod"
+max_hp = 55
+hp = 55
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_R1Zero" unique_id=625663525]
+shape = SubResource("RectangleShape2D_bmsap")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_R1Zero" unique_id=1590373075]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_R1Zero" unique_id=1059475503]
+points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
+width = 2.2
+default_color = Color(0, 0.92, 1, 1)
+
+[node name="WhaleCrest" type="Polygon2D" parent="Enemies/Underling_R1Zero" unique_id=945318002]
+color = Color(0, 0.92, 1, 1)
+polygon = PackedVector2Array(-10, 2.5, -4.5, -7.5, 1.5, -2, 7.5, -8.5, 10, 2.5, 0, 7)
+
+[node name="SonarEye" type="Polygon2D" parent="Enemies/Underling_R1Zero" unique_id=694614219]
+color = Color(0.1, 0.56, 1, 1)
+polygon = PackedVector2Array(2.8, 0, 1.9798989, 1.9798989, 1.7144488e-16, 2.8, -1.9798989, 1.9798989, -2.8, 3.4288976e-16, -1.9798989, -1.9798989, -5.1433466e-16, -2.8, 1.9798989, -1.9798989)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_R1Zero" unique_id=1311681815]
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = -25.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_R1Zero" unique_id=1028615288]
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -26.0
+mouse_filter = 2
+color = Color(0, 0.92, 1, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Underling_R1Zero" unique_id=1877366536]
+offset_left = -95.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "R1-Zero Pod (55 HP)"
+horizontal_alignment = 1
+
+[node name="Underling_MoE_1" type="CharacterBody2D" parent="Enemies" unique_id=1433013018 groups=["enemies", "underlings"]]
+position = Vector2(460, 642)
+collision_layer = 4
+script = ExtResource("2_5lcx6")
+enemy_name = "MoE Expert #1"
+max_hp = 55
+hp = 55
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_MoE_1" unique_id=287728672]
+shape = SubResource("RectangleShape2D_rqrji")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_MoE_1" unique_id=565257597]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_MoE_1" unique_id=1876322823]
+points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
+width = 2.2
+default_color = Color(0.1, 0.56, 1, 1)
+
+[node name="WhaleCrest" type="Polygon2D" parent="Enemies/Underling_MoE_1" unique_id=1641838490]
+color = Color(0.1, 0.56, 1, 1)
+polygon = PackedVector2Array(-10, 2.5, -4.5, -7.5, 1.5, -2, 7.5, -8.5, 10, 2.5, 0, 7)
+
+[node name="SonarEye" type="Polygon2D" parent="Enemies/Underling_MoE_1" unique_id=956255951]
+color = Color(0, 0.92, 1, 1)
+polygon = PackedVector2Array(2.8, 0, 1.9798989, 1.9798989, 1.7144488e-16, 2.8, -1.9798989, 1.9798989, -2.8, 3.4288976e-16, -1.9798989, -1.9798989, -5.1433466e-16, -2.8, 1.9798989, -1.9798989)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_MoE_1" unique_id=1925730900]
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = -25.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_MoE_1" unique_id=822617279]
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -26.0
+mouse_filter = 2
+color = Color(0.1, 0.56, 1, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Underling_MoE_1" unique_id=1130323642]
+offset_left = -95.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "MoE Expert #1 (55 HP)"
+horizontal_alignment = 1
+
+[node name="Underling_MoE_2" type="CharacterBody2D" parent="Enemies" unique_id=1586971254 groups=["enemies", "underlings"]]
+position = Vector2(760, 402)
+collision_layer = 4
+script = ExtResource("2_5lcx6")
+enemy_name = "MoE Expert #2"
+max_hp = 55
+hp = 55
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_MoE_2" unique_id=1013783017]
+shape = SubResource("RectangleShape2D_8x87a")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_MoE_2" unique_id=270358044]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_MoE_2" unique_id=907606101]
+points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
+width = 2.2
+default_color = Color(0, 0.92, 1, 1)
+
+[node name="WhaleCrest" type="Polygon2D" parent="Enemies/Underling_MoE_2" unique_id=1538204075]
+color = Color(0, 0.92, 1, 1)
+polygon = PackedVector2Array(-10, 2.5, -4.5, -7.5, 1.5, -2, 7.5, -8.5, 10, 2.5, 0, 7)
+
+[node name="SonarEye" type="Polygon2D" parent="Enemies/Underling_MoE_2" unique_id=909736529]
+color = Color(0.1, 0.56, 1, 1)
+polygon = PackedVector2Array(2.8, 0, 1.9798989, 1.9798989, 1.7144488e-16, 2.8, -1.9798989, 1.9798989, -2.8, 3.4288976e-16, -1.9798989, -1.9798989, -5.1433466e-16, -2.8, 1.9798989, -1.9798989)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_MoE_2" unique_id=1110875236]
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = -25.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_MoE_2" unique_id=1259434688]
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -26.0
+mouse_filter = 2
+color = Color(0, 0.92, 1, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Underling_MoE_2" unique_id=1484268208]
+offset_left = -95.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "MoE Expert #2 (55 HP)"
+horizontal_alignment = 1
+
+[node name="Underling_SonarMini" type="CharacterBody2D" parent="Enemies" unique_id=2030020735 groups=["enemies", "underlings"]]
+position = Vector2(1048, 498)
+collision_layer = 4
+script = ExtResource("2_5lcx6")
+enemy_name = "Deep Sonar Mini"
+max_hp = 55
+hp = 55
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_SonarMini" unique_id=1482463829]
+shape = SubResource("RectangleShape2D_ci4mn")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_SonarMini" unique_id=747508446]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_SonarMini" unique_id=549904335]
+points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
+width = 2.2
+default_color = Color(0.1, 0.56, 1, 1)
+
+[node name="WhaleCrest" type="Polygon2D" parent="Enemies/Underling_SonarMini" unique_id=873575769]
+color = Color(0.1, 0.56, 1, 1)
+polygon = PackedVector2Array(-10, 2.5, -4.5, -7.5, 1.5, -2, 7.5, -8.5, 10, 2.5, 0, 7)
+
+[node name="SonarEye" type="Polygon2D" parent="Enemies/Underling_SonarMini" unique_id=1465292064]
+color = Color(0, 0.92, 1, 1)
+polygon = PackedVector2Array(2.8, 0, 1.9798989, 1.9798989, 1.7144488e-16, 2.8, -1.9798989, 1.9798989, -2.8, 3.4288976e-16, -1.9798989, -1.9798989, -5.1433466e-16, -2.8, 1.9798989, -1.9798989)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_SonarMini" unique_id=715726230]
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = -25.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_SonarMini" unique_id=441598414]
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -26.0
+mouse_filter = 2
+color = Color(0.1, 0.56, 1, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Underling_SonarMini" unique_id=528475726]
+offset_left = -95.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "Deep Sonar Mini (55 HP)"
+horizontal_alignment = 1
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1698731012]
+position = Vector2(1100, 636)
+
+[node name="SpawnPad" type="Line2D" parent="PlayerSpawn" unique_id=1703120977]
+points = PackedVector2Array(-24, 34, 24, 34)
+width = 4.0
+default_color = Color(0.35, 0.95, 1, 0.85)
+
+[node name="SpawnLabel" type="Label" parent="PlayerSpawn" unique_id=349611533]
+offset_left = -50.0
+offset_top = 14.0
+offset_right = 50.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.75, 0.95, 1, 0.85)
+text = "START"
+horizontal_alignment = 1
+
+[node name="CheckpointFlag" type="Area2D" parent="." unique_id=1087916051]
+position = Vector2(940, 632)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointFlag" unique_id=1292575956]
+shape = SubResource("RectangleShape2D_sotx7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointFlag" unique_id=1227717524]
+texture_filter = 1
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_c5gc3")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="FlagLabel" type="Label" parent="CheckpointFlag" unique_id=1813219225]
+offset_left = -50.0
+offset_top = -52.0
+offset_right = 50.0
+offset_bottom = -29.0
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0, 0.92, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.05, 1)
+theme_override_constants/outline_size = 3
+text = "GOAL"
+horizontal_alignment = 1

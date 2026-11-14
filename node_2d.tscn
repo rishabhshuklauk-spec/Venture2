@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dygidsxycg4st"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_player"]
 [ext_resource type="Texture2D" uid="uid://c88huooxgo2i7" path="res://assets/images/Player/Idle (32x32).png" id="2_idle"]
 [ext_resource type="Texture2D" uid="uid://b5ygcppmyj0vp" path="res://assets/images/Player/Run (32x32).png" id="3_run"]
 [ext_resource type="Texture2D" uid="uid://xei3siw5ov0v" path="res://assets/images/Player/Jump (32x32).png" id="4_jump"]
@@ -251,7 +250,6 @@ size = Vector2(36, 56)
 [node name="Player" type="CharacterBody2D" unique_id=30529122]
 collision_layer = 2
 collision_mask = 1
-script = ExtResource("1_player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752654922]
 texture_filter = 1

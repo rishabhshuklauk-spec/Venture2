@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_jwv3a"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="2_dopym"]
+[ext_resource type="Script" path="res://enemy.gd" id="2_ootpb"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dopym"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v38iq"]
 texture = ExtResource("1_jwv3a")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -294,55 +295,67 @@ texture = ExtResource("1_jwv3a")
 20:10/0 = 0
 20:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_phqkc"]
+[sub_resource type="TileSet" id="TileSet_v8kj3"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_dopym")
+sources/0 = SubResource("TileSetAtlasSource_v38iq")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ootpb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crycw"]
+size = Vector2(68, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2041"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4tn"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usj0q"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j5gb"]
 size = Vector2(44, 68)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v38iq"]
-atlas = ExtResource("2_dopym")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8kj3"]
-atlas = ExtResource("2_dopym")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_crycw"]
-atlas = ExtResource("2_dopym")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2041"]
-atlas = ExtResource("2_dopym")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xy4tn"]
-atlas = ExtResource("2_dopym")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_usj0q"]
-atlas = ExtResource("2_dopym")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5j5gb"]
-atlas = ExtResource("2_dopym")
-region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx85b"]
 atlas = ExtResource("2_dopym")
-region = Rect2(448, 0, 64, 64)
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx44q"]
 atlas = ExtResource("2_dopym")
-region = Rect2(512, 0, 64, 64)
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8vhr"]
 atlas = ExtResource("2_dopym")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqrsh"]
+atlas = ExtResource("2_dopym")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l65w"]
+atlas = ExtResource("2_dopym")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjtee"]
+atlas = ExtResource("2_dopym")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1idop"]
+atlas = ExtResource("2_dopym")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beq0j"]
+atlas = ExtResource("2_dopym")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
+atlas = ExtResource("2_dopym")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
+atlas = ExtResource("2_dopym")
 region = Rect2(576, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eqrsh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5gc3"]
 animations = [{
 "frames": [],
 "loop": 1,
@@ -351,27 +364,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v38iq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v8kj3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_crycw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i2041")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xy4tn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_usj0q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5j5gb")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_mx85b")
 }, {
 "duration": 1.0,
@@ -379,76 +371,453 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n8vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqrsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l65w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjtee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1idop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beq0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nauge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycv2e")
 }],
 "loop": 1,
 "name": &"idle",
 "speed": 12.0
 }]
 
-[node name="LevelRoot" type="Node2D" unique_id=695534477]
+[node name="LevelRoot" type="Node2D" unique_id=538338397]
 
-[node name="ArenaBackground" type="ColorRect" parent="." unique_id=1929908972]
+[node name="ArenaBackground" type="ColorRect" parent="." unique_id=1863739141]
 z_index = -20
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
-color = Color(0.065, 0.085, 0.135, 1)
+color = Color(0.04, 0.1, 0.09, 1)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=170706093]
+[node name="ThemeDecor" type="Node2D" parent="." unique_id=541312221]
+z_index = -10
+
+[node name="GridV_112" type="Line2D" parent="ThemeDecor" unique_id=678841706]
+points = PackedVector2Array(112, 48, 112, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_208" type="Line2D" parent="ThemeDecor" unique_id=1942530592]
+points = PackedVector2Array(208, 48, 208, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_304" type="Line2D" parent="ThemeDecor" unique_id=560322419]
+points = PackedVector2Array(304, 48, 304, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_400" type="Line2D" parent="ThemeDecor" unique_id=1622663373]
+points = PackedVector2Array(400, 48, 400, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_496" type="Line2D" parent="ThemeDecor" unique_id=821376486]
+points = PackedVector2Array(496, 48, 496, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_592" type="Line2D" parent="ThemeDecor" unique_id=1415094768]
+points = PackedVector2Array(592, 48, 592, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_688" type="Line2D" parent="ThemeDecor" unique_id=1772925244]
+points = PackedVector2Array(688, 48, 688, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_784" type="Line2D" parent="ThemeDecor" unique_id=1122875363]
+points = PackedVector2Array(784, 48, 784, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_880" type="Line2D" parent="ThemeDecor" unique_id=1169648796]
+points = PackedVector2Array(880, 48, 880, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_976" type="Line2D" parent="ThemeDecor" unique_id=512551151]
+points = PackedVector2Array(976, 48, 976, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_1072" type="Line2D" parent="ThemeDecor" unique_id=732864083]
+points = PackedVector2Array(1072, 48, 1072, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridV_1168" type="Line2D" parent="ThemeDecor" unique_id=2017143478]
+points = PackedVector2Array(1168, 48, 1168, 672)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridH_96" type="Line2D" parent="ThemeDecor" unique_id=1957834432]
+points = PackedVector2Array(64, 96, 1216, 96)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridH_192" type="Line2D" parent="ThemeDecor" unique_id=865034513]
+points = PackedVector2Array(64, 192, 1216, 192)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridH_288" type="Line2D" parent="ThemeDecor" unique_id=1610589577]
+points = PackedVector2Array(64, 288, 1216, 288)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridH_384" type="Line2D" parent="ThemeDecor" unique_id=1988968381]
+points = PackedVector2Array(64, 384, 1216, 384)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridH_480" type="Line2D" parent="ThemeDecor" unique_id=1821831728]
+points = PackedVector2Array(64, 480, 1216, 480)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="GridH_576" type="Line2D" parent="ThemeDecor" unique_id=2007991852]
+points = PackedVector2Array(64, 576, 1216, 576)
+width = 1.0
+default_color = Color(0.06, 0.84, 0.64, 0.08)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=708099128]
 texture_filter = 1
 position = Vector2(16, 0)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAABAAAAAAAMAAUAAAACAAAAAAAMAAUAAAADAAAAAAAMAAUAAAAEAAAAAAAMAAUAAAAFAAAAAAAMAAUAAAAGAAAAAAAMAAUAAAAHAAAAAAAMAAUAAAAIAAAAAAAMAAUAAAAJAAAAAAAMAAUAAAAKAAAAAAAMAAUAAAALAAAAAAAMAAUAAAAAAA4AAAAMAAUAAAABAA4AAAAMAAUAAAACAA4AAAAMAAUAAAADAA4AAAAMAAUAAAAEAA4AAAAMAAUAAAAFAA4AAAAMAAUAAAAGAA4AAAAMAAUAAAAHAA4AAAAMAAUAAAAIAA4AAAAMAAUAAAAJAA4AAAAMAAUAAAAKAA4AAAAMAAUAAAALAA4AAAAMAAUAAAAMAAAAAAAMAAUAAAAMAA4AAAAMAAUAAAANAAAAAAAMAAUAAAANAA4AAAAMAAUAAAAOAAAAAAAMAAUAAAAOAA4AAAAMAAUAAAAPAAAAAAAMAAUAAAAPAA4AAAAMAAUAAAAQAAAAAAAMAAUAAAAQAA4AAAAMAAUAAAARAAAAAAAMAAUAAAARAA4AAAAMAAUAAAASAAAAAAAMAAUAAAASAA4AAAAMAAUAAAATAAAAAAAMAAUAAAATAA4AAAAMAAUAAAAUAAAAAAAMAAUAAAAUAA4AAAAMAAUAAAAVAAAAAAAMAAUAAAAVAA4AAAAMAAUAAAAWAAAAAAAMAAUAAAAWAA4AAAAMAAUAAAAXAAAAAAAMAAUAAAAXAA4AAAAMAAUAAAAYAAAAAAAMAAUAAAAYAA4AAAAMAAUAAAAZAAAAAAAMAAUAAAAZAA4AAAAMAAUAAAAAAAEAAAAMAAUAAAAZAAEAAAAMAAUAAAAAAAIAAAAMAAUAAAAZAAIAAAAMAAUAAAAAAAMAAAAMAAUAAAAZAAMAAAAMAAUAAAAAAAQAAAAMAAUAAAAZAAQAAAAMAAUAAAAAAAUAAAAMAAUAAAAZAAUAAAAMAAUAAAAAAAYAAAAMAAUAAAAZAAYAAAAMAAUAAAAAAAcAAAAMAAUAAAAZAAcAAAAMAAUAAAAAAAgAAAAMAAUAAAAZAAgAAAAMAAUAAAAAAAkAAAAMAAUAAAAZAAkAAAAMAAUAAAAAAAoAAAAMAAUAAAAZAAoAAAAMAAUAAAAAAAsAAAAMAAUAAAAZAAsAAAAMAAUAAAAAAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAAAA0AAAAMAAUAAAAZAA0AAAAMAAUAAAABAAcAAAAMAAUAAAACAAcAAAAMAAUAAAADAAcAAAAMAAUAAAAEAAcAAAAMAAUAAAAFAAcAAAAMAAUAAAAGAAcAAAAMAAUAAAAHAAcAAAAMAAUAAAAIAAcAAAAMAAUAAAAJAAcAAAAMAAUAAAAKAAcA//////////8KAAQA//////////8KAAUA//////////8KAAYA//////////8IAAgAAAAMAAUAAAAIAAkAAAAMAAUAAAAIAAoAAAAMAAUAAAAIAAsAAAAMAAUAAAAIAAwAAAAMAAUAAAAIAA0AAAAMAAUAAAAPAAsAAAAMAAUAAAAQAAsAAAAMAAUAAAARAAsAAAAMAAUAAAAUAAgAAAAMAAUAAAAVAAgAAAAMAAUAAAAWAAgAAAAMAAUAAAAXAAgAAAAMAAUAAAAJAAUAAAARAAkAAAAJAAYAAAARAAkAAAA=")
-tile_set = SubResource("TileSet_phqkc")
+tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAAAAA4AAAAHAAAAAAABAAAAAAAMAAUAAAABAA4AAAAHAAAAAAACAAAAAAAMAAUAAAACAA4AAAAHAAAAAAADAAAAAAAMAAUAAAADAA4AAAAHAAAAAAAEAAAAAAAMAAUAAAAEAA4AAAAHAAAAAAAFAAAAAAAMAAUAAAAFAA4AAAAHAAAAAAAGAAAAAAAMAAUAAAAGAA4AAAAHAAAAAAAHAAAAAAAMAAUAAAAHAA4AAAAHAAAAAAAIAAAAAAAMAAUAAAAIAA4AAAAHAAAAAAAJAAAAAAAMAAUAAAAJAA4AAAAHAAAAAAAKAAAAAAAMAAUAAAAKAA4AAAAHAAAAAAALAAAAAAAMAAUAAAALAA4AAAAHAAAAAAAMAAAAAAAMAAUAAAAMAA4AAAAHAAAAAAANAAAAAAAMAAUAAAANAA4AAAAHAAAAAAAOAAAAAAAMAAUAAAAOAA4AAAAHAAAAAAAPAAAAAAAMAAUAAAAPAA4AAAAHAAAAAAAQAAAAAAAMAAUAAAAQAA4AAAAHAAAAAAARAAAAAAAMAAUAAAARAA4AAAAHAAAAAAASAAAAAAAMAAUAAAASAA4AAAAHAAAAAAATAAAAAAAMAAUAAAATAA4AAAAHAAAAAAAUAAAAAAAMAAUAAAAUAA4AAAAHAAAAAAAVAAAAAAAMAAUAAAAVAA4AAAAHAAAAAAAWAAAAAAAMAAUAAAAWAA4AAAAHAAAAAAAXAAAAAAAMAAUAAAAXAA4AAAAHAAAAAAAYAAAAAAAMAAUAAAAYAA4AAAAHAAAAAAAZAAAAAAAMAAUAAAAZAA4AAAAHAAAAAAAAAAEAAAAMAAUAAAAZAAEAAAAMAAUAAAAAAAIAAAAMAAUAAAAZAAIAAAAMAAUAAAAAAAMAAAAMAAUAAAAZAAMAAAAMAAUAAAAAAAQAAAAMAAUAAAAZAAQAAAAMAAUAAAAAAAUAAAAMAAUAAAAZAAUAAAAMAAUAAAAAAAYAAAAMAAUAAAAZAAYAAAAMAAUAAAAAAAcAAAAMAAUAAAAZAAcAAAAMAAUAAAAAAAgAAAAMAAUAAAAZAAgAAAAMAAUAAAAAAAkAAAAMAAUAAAAZAAkAAAAMAAUAAAAAAAoAAAAMAAUAAAAZAAoAAAAMAAUAAAAAAAsAAAAMAAUAAAAZAAsAAAAMAAUAAAAAAAwAAAAMAAUAAAAZAAwAAAAMAAUAAAAAAA0AAAAMAAUAAAAZAA0AAAAMAAUAAAABAAcAAAAHAAAAAAACAAcAAAAHAAAAAAADAAcAAAAHAAAAAAAEAAcAAAAHAAAAAAAFAAcAAAAHAAAAAAAGAAcAAAAHAAAAAAAHAAcAAAAHAAAAAAAIAAcAAAAHAAAAAAAJAAcAAAAHAAAAAAAJAAUAAAARAAkAAAAJAAYAAAARAAkAAAAIAAgAAAAMAAUAAAAIAAkAAAAMAAUAAAAIAAoAAAAMAAUAAAAIAAsAAAAMAAUAAAAIAAwAAAAMAAUAAAAIAA0AAAAMAAUAAAAPAAsAAAAHAAAAAAAQAAsAAAAHAAAAAAARAAsAAAAHAAAAAAAUAAgAAAAHAAAAAAAVAAgAAAAHAAAAAAAWAAgAAAAHAAAAAAAXAAgAAAAHAAAAAAA=")
+tile_set = SubResource("TileSet_v8kj3")
 
-[node name="BankRamp" type="StaticBody2D" parent="." unique_id=788663761 groups=["walls"]]
+[node name="LevelHeaderLabel" type="Label" parent="." unique_id=1388462118]
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 1216.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.06, 0.84, 0.64, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 0.95)
+theme_override_constants/outline_size = 4
+text = "LEVEL 1 — PLAYER vs ChatGPT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ramps" type="Node2D" parent="." unique_id=2032566747]
+
+[node name="BankRamp" type="StaticBody2D" parent="Ramps" unique_id=1853129616 groups=["walls"]]
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BankRamp" unique_id=206420760]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramps/BankRamp" unique_id=187836166]
 polygon = PackedVector2Array(448, 496, 672, 672, 448, 672)
 
-[node name="VisualPolygon" type="Polygon2D" parent="BankRamp" unique_id=196172058]
-color = Color(0.14, 0.22, 0.34, 1)
+[node name="VisualPolygon" type="Polygon2D" parent="Ramps/BankRamp" unique_id=1710152891]
+color = Color(0.07, 0.24, 0.2, 1)
 polygon = PackedVector2Array(448, 496, 672, 672, 448, 672)
 
-[node name="BounceSurfaceTrim" type="Line2D" parent="BankRamp" unique_id=544830712]
+[node name="BounceSurfaceTrim" type="Line2D" parent="Ramps/BankRamp" unique_id=983268659]
 points = PackedVector2Array(448, 496, 672, 672)
-width = 5.0
-default_color = Color(0.2, 0.95, 1, 1)
+width = 4.5
+default_color = Color(0.06, 0.84, 0.64, 1)
 
-[node name="BankHint" type="Label" parent="BankRamp" unique_id=1568375059]
+[node name="RampHint" type="Label" parent="Ramps/BankRamp" unique_id=1828247577]
 offset_left = 456.0
 offset_top = 636.0
-offset_right = 560.0
-offset_bottom = 656.0
-theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(0.55, 0.95, 1, 0.9)
+offset_right = 456.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.06, 0.84, 0.64, 1)
 text = "BANK RAMP"
 
-[node name="CheckpointFlag" type="Area2D" parent="." unique_id=684345717]
+[node name="Enemies" type="Node2D" parent="." unique_id=1138665174]
+
+[node name="Boss_ChatGPT" type="CharacterBody2D" parent="Enemies" unique_id=842343520 groups=["boss", "enemies"]]
+position = Vector2(240, 290)
+collision_layer = 4
+script = ExtResource("2_ootpb")
+enemy_name = "BOSS: ChatGPT-4o"
+is_boss = true
+max_hp = 250
+hp = 250
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Boss_ChatGPT" unique_id=1601313516]
+shape = SubResource("RectangleShape2D_crycw")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Boss_ChatGPT" unique_id=1018730444]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Boss_ChatGPT" unique_id=2060529800]
+points = PackedVector2Array(31.411903, 13.011236, 13.011236, 31.411903, -13.011236, 31.411903, -31.411903, 13.011236, -31.411903, -13.011236, -13.011236, -31.411903, 13.011236, -31.411903, 31.411903, -13.011236, 31.411903, 13.011236)
+width = 3.5
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotOuter" type="Line2D" parent="Enemies/Boss_ChatGPT" unique_id=479209952]
+points = PackedVector2Array(22, 0, 11, 19.052559, -11, 19.052559, -22, 2.694134e-15, -11, -19.052559, 11, -19.052559, 22, 0)
+width = 2.8
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotCore" type="Polygon2D" parent="Enemies/Boss_ChatGPT" unique_id=240520575]
+color = Color(0.55, 1, 0.88, 1)
+polygon = PackedVector2Array(8.573651, 4.95, 6.0618013e-16, 9.9, -8.573651, 4.95, -8.573651, -4.95, -1.8185404e-15, -9.9, 8.573651, -4.95)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Boss_ChatGPT" unique_id=94914123]
+offset_left = -44.0
+offset_top = -49.0
+offset_right = 44.0
+offset_bottom = -39.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Boss_ChatGPT" unique_id=1246616051]
+offset_left = -43.0
+offset_top = -48.0
+offset_right = 43.0
+offset_bottom = -40.0
+mouse_filter = 2
+color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Boss_ChatGPT" unique_id=382102863]
+offset_left = -95.0
+offset_top = -70.0
+offset_right = 95.0
+offset_bottom = -47.0
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.55, 1, 0.88, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "BOSS: ChatGPT-4o (250 HP)"
+horizontal_alignment = 1
+
+[node name="Underling_GPTMini_1" type="CharacterBody2D" parent="Enemies" unique_id=253876860 groups=["enemies", "underlings"]]
+position = Vector2(380, 306)
+collision_layer = 4
+script = ExtResource("2_ootpb")
+enemy_name = "GPT-4o Mini"
+max_hp = 45
+hp = 45
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GPTMini_1" unique_id=933966064]
+shape = SubResource("RectangleShape2D_i2041")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GPTMini_1" unique_id=869825156]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GPTMini_1" unique_id=422903405]
+points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
+width = 2.2
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotOuter" type="Line2D" parent="Enemies/Underling_GPTMini_1" unique_id=703957853]
+points = PackedVector2Array(10, 0, 5, 8.660254, -5, 8.660254, -10, 1.2246064e-15, -5, -8.660254, 5, -8.660254, 10, 0)
+width = 1.8
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotCore" type="Polygon2D" parent="Enemies/Underling_GPTMini_1" unique_id=517041154]
+color = Color(0.55, 1, 0.88, 1)
+polygon = PackedVector2Array(3.8971143, 2.25, 2.7553643e-16, 4.5, -3.8971143, 2.25, -3.8971143, -2.25, -8.266093e-16, -4.5, 3.8971143, -2.25)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GPTMini_1" unique_id=656346719]
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = -25.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GPTMini_1" unique_id=981493823]
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -26.0
+mouse_filter = 2
+color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Underling_GPTMini_1" unique_id=1897394619]
+offset_left = -95.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "GPT-4o Mini (45 HP)"
+horizontal_alignment = 1
+
+[node name="Underling_GPTMini_2" type="CharacterBody2D" parent="Enemies" unique_id=902904472 groups=["enemies", "underlings"]]
+position = Vector2(808, 498)
+collision_layer = 4
+script = ExtResource("2_ootpb")
+enemy_name = "Prompt Token"
+max_hp = 45
+hp = 45
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GPTMini_2" unique_id=841414746]
+shape = SubResource("RectangleShape2D_xy4tn")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GPTMini_2" unique_id=398227966]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GPTMini_2" unique_id=508986212]
+points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
+width = 2.2
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotOuter" type="Line2D" parent="Enemies/Underling_GPTMini_2" unique_id=364095569]
+points = PackedVector2Array(10, 0, 5, 8.660254, -5, 8.660254, -10, 1.2246064e-15, -5, -8.660254, 5, -8.660254, 10, 0)
+width = 1.8
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotCore" type="Polygon2D" parent="Enemies/Underling_GPTMini_2" unique_id=639588360]
+color = Color(0.55, 1, 0.88, 1)
+polygon = PackedVector2Array(3.8971143, 2.25, 2.7553643e-16, 4.5, -3.8971143, 2.25, -3.8971143, -2.25, -8.266093e-16, -4.5, 3.8971143, -2.25)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GPTMini_2" unique_id=1696453093]
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = -25.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GPTMini_2" unique_id=1784797597]
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -26.0
+mouse_filter = 2
+color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Underling_GPTMini_2" unique_id=299848995]
+offset_left = -95.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "Prompt Token (45 HP)"
+horizontal_alignment = 1
+
+[node name="Underling_GPTMini_3" type="CharacterBody2D" parent="Enemies" unique_id=406631132 groups=["enemies", "underlings"]]
+position = Vector2(1072, 354)
+collision_layer = 4
+script = ExtResource("2_ootpb")
+enemy_name = "RLHF Drone"
+max_hp = 45
+hp = 45
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Underling_GPTMini_3" unique_id=566492333]
+shape = SubResource("RectangleShape2D_usj0q")
+
+[node name="Chassis" type="Polygon2D" parent="Enemies/Underling_GPTMini_3" unique_id=1378534011]
+color = Color(0.09, 0.11, 0.16, 0.96)
+polygon = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431)
+
+[node name="ChassisOutline" type="Line2D" parent="Enemies/Underling_GPTMini_3" unique_id=17401404]
+points = PackedVector2Array(17, 0, 8.5, 14.722431, -8.5, 14.722431, -17, 2.0818308e-15, -8.5, -14.722431, 8.5, -14.722431, 17, 0)
+width = 2.2
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotOuter" type="Line2D" parent="Enemies/Underling_GPTMini_3" unique_id=2105073689]
+points = PackedVector2Array(10, 0, 5, 8.660254, -5, 8.660254, -10, 1.2246064e-15, -5, -8.660254, 5, -8.660254, 10, 0)
+width = 1.8
+default_color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="KnotCore" type="Polygon2D" parent="Enemies/Underling_GPTMini_3" unique_id=1556553136]
+color = Color(0.55, 1, 0.88, 1)
+polygon = PackedVector2Array(3.8971143, 2.25, 2.7553643e-16, 4.5, -3.8971143, 2.25, -3.8971143, -2.25, -8.266093e-16, -4.5, 3.8971143, -2.25)
+
+[node name="HPBarBg" type="ColorRect" parent="Enemies/Underling_GPTMini_3" unique_id=1624997750]
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 23.0
+offset_bottom = -25.0
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.05, 0.95)
+
+[node name="HPBarFill" type="ColorRect" parent="Enemies/Underling_GPTMini_3" unique_id=359741437]
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -26.0
+mouse_filter = 2
+color = Color(0.06, 0.84, 0.64, 1)
+
+[node name="TitleLabel" type="Label" parent="Enemies/Underling_GPTMini_3" unique_id=563244398]
+offset_left = -95.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.04, 1)
+theme_override_constants/outline_size = 3
+text = "RLHF Drone (45 HP)"
+horizontal_alignment = 1
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1438204597]
+position = Vector2(1020, 636)
+
+[node name="SpawnPad" type="Line2D" parent="PlayerSpawn" unique_id=1796085741]
+points = PackedVector2Array(-24, 34, 24, 34)
+width = 4.0
+default_color = Color(0.35, 0.95, 1, 0.85)
+
+[node name="SpawnLabel" type="Label" parent="PlayerSpawn" unique_id=1612683834]
+offset_left = -50.0
+offset_top = 14.0
+offset_right = 50.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.75, 0.95, 1, 0.85)
+text = "START"
+horizontal_alignment = 1
+
+[node name="CheckpointFlag" type="Area2D" parent="." unique_id=1229609907]
 position = Vector2(1148, 632)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointFlag" unique_id=361854839]
-shape = SubResource("RectangleShape2D_ootpb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointFlag" unique_id=1466270420]
+shape = SubResource("RectangleShape2D_5j5gb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointFlag" unique_id=245892997]
-modulate = Color(0.5, 0.5, 0.6, 0.6)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointFlag" unique_id=541320645]
 texture_filter = 1
 scale = Vector2(1.25, 1.25)
-sprite_frames = SubResource("SpriteFrames_eqrsh")
+sprite_frames = SubResource("SpriteFrames_c5gc3")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="FlagLabel" type="Label" parent="CheckpointFlag" unique_id=411430613]
-offset_left = -56.0
-offset_top = -54.0
-offset_right = 56.0
-offset_bottom = -31.0
+[node name="FlagLabel" type="Label" parent="CheckpointFlag" unique_id=1138000351]
+offset_left = -50.0
+offset_top = -52.0
+offset_right = 50.0
+offset_bottom = -29.0
 theme_override_font_sizes/font_size = 11
-theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 0.9)
-theme_override_colors/font_outline_color = Color(0.05, 0.05, 0.08, 1)
+theme_override_colors/font_color = Color(0.06, 0.84, 0.64, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.02, 0.05, 1)
 theme_override_constants/outline_size = 3
-text = "LOCKED"
+text = "GOAL"
 horizontal_alignment = 1
